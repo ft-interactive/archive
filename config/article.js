@@ -9,22 +9,21 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date(),
+  publishedDate: new Date('2014-11-06T11:21:00Z'),
 
-  headline: 'Politics and the English Language',
+  headline: 'World’s fastest lifts race to the top of the tallest buildings',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful' +
-           'and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: 'Political language is designed to make lies sound truthful and murder respectable, and to give an appearance of solidity to pure wind',
 
   topic: {
-    name: 'Starter Kit',
+    name: 'Industrials',
     url: '/foo',
   },
 
   relatedArticle: {
-    text: 'Related article »',
-    url: 'https://en.wikipedia.org/wiki/Politics_and_the_English_Language',
+    text: '',
+    url: '',
   },
 
   mainImage: {
@@ -38,12 +37,13 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Author One', url: '/foo/bar' },
-    { name: 'Author Two' },
+    { name: 'Tanya Powley', url: 'https://www.ft.com/stream/authorsId/Q0ItMDAwMDg0MA==-QXV0aG9ycw==' },
+    { name: 'John Burn-Murdoch', url: 'https://www.ft.com/john-burn-murdoch' },
+    { name: 'Cleve Jones', url: 'https://www.ft.com/stream/authorsId/Q0ItQ0o2Nzg5MA==-QXV0aG9ycw==' },
   ],
 
   // Appears in the HTML <title>
-  title: '',
+  title: 'World’s fastest lifts race to the top of the tallest buildings',
 
   // meta data
   description: '',
