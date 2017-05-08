@@ -14,11 +14,11 @@ export default () => ({ // eslint-disable-line
   headline: 'World’s fastest lifts race to the top of the tallest buildings',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'Political language is designed to make lies sound truthful and murder respectable, and to give an appearance of solidity to pure wind',
+  summary: '',
 
   topic: {
     name: 'Industrials',
-    url: '/foo',
+    url: 'https://www.ft.com/companies/industrials',
   },
 
   relatedArticle: {
