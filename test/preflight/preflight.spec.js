@@ -23,40 +23,40 @@ module.exports = {
     });
   },
 
-  'Twitter meta title should be present': (client) => {
-    client.expect.element('meta[name="twitter:title"]')
-      .to.be.present;
-    client.expect.element('meta[name="twitter:title"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // // 'Twitter meta title should be present': (client) => {
+  // //   client.expect.element('meta[name="twitter:title"]')
+  // //     .to.be.present;
+  // //   client.expect.element('meta[name="twitter:title"]')
+  // //     .to.have.attribute('content').not.equal('');
+  // // },
 
-  'Open Graph meta title should be present': (client) => {
-    client.expect.element('meta[property="og:title"]')
-      .to.be.present;
-    client.expect.element('meta[property="og:title"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // // 'Open Graph meta title should be present': (client) => {
+  // //   client.expect.element('meta[property="og:title"]')
+  // //     .to.be.present;
+  // //   client.expect.element('meta[property="og:title"]')
+  // //     .to.have.attribute('content').not.equal('');
+  // // },
 
-  'HTML meta description should be present': (client) => {
-    client.expect.element('meta[name="description"]')
-      .to.be.present;
-    client.expect.element('meta[name="description"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // // 'HTML meta description should be present': (client) => {
+  // //   client.expect.element('meta[name="description"]')
+  // //     .to.be.present;
+  // //   client.expect.element('meta[name="description"]')
+  // //     .to.have.attribute('content').not.equal('');
+  // // },
 
-  'Twitter meta description should be present': (client) => {
-    client.expect.element('meta[name="twitter:description"]')
-      .to.be.present;
-    client.expect.element('meta[name="twitter:description"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // 'Twitter meta description should be present': (client) => {
+  //   client.expect.element('meta[name="twitter:description"]')
+  //     .to.be.present;
+  //   client.expect.element('meta[name="twitter:description"]')
+  //     .to.have.attribute('content').not.equal('');
+  // },
 
-  'Open Graph meta description should be present': (client) => {
-    client.expect.element('meta[property="og:description"]')
-      .to.be.present;
-    client.expect.element('meta[property="og:description"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // 'Open Graph meta description should be present': (client) => {
+  //   client.expect.element('meta[property="og:description"]')
+  //     .to.be.present;
+  //   client.expect.element('meta[property="og:description"]')
+  //     .to.have.attribute('content').not.equal('');
+  // },
 
   'Canonical link tag should be present': (client) => {
     client.expect.element('link[rel="canonical"]')
@@ -65,65 +65,65 @@ module.exports = {
       .to.have.attribute('href').not.equal('');
   },
 
-  'Twitter meta url should be present': (client) => {
-    client.expect.element('meta[name="twitter:url"]')
-      .to.be.present;
-    client.expect.element('meta[name="twitter:url"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // 'Twitter meta url should be present': (client) => {
+  //   client.expect.element('meta[name="twitter:url"]')
+  //     .to.be.present;
+  //   client.expect.element('meta[name="twitter:url"]')
+  //     .to.have.attribute('content').not.equal('');
+  // },
 
-  'Open Graph meta url should be present': (client) => {
-    client.expect.element('meta[property="og:url"]')
-      .to.be.present;
-    client.expect.element('meta[property="og:url"]')
-      .to.have.attribute('content').not.equal('');
-  },
+  // 'Open Graph meta url should be present': (client) => {
+  //   client.expect.element('meta[property="og:url"]')
+  //     .to.be.present;
+  //   client.expect.element('meta[property="og:url"]')
+  //     .to.have.attribute('content').not.equal('');
+  // },
 
-  'Optional image link tag should be present': (client) => {
-    client.verify.elementPresent('link[rel="image_src"]',
-      'Please add social images to config/article.js!');
-  },
+  // 'Optional image link tag should be present': (client) => {
+  //   client.verify.elementPresent('link[rel="image_src"]',
+  //     'Please add social images to config/article.js!');
+  // },
 
-  'Optional Twitter meta image should have content if present': (client) => {
-    client.perform((done) => {
-      client.element('css selector', 'meta[name="twitter:image"]', (result) => {
-        if (result.value && result.value.ELEMENT) {
-          client.expect.element('meta[name="twitter:image"]')
-            .to.have.attribute('content').not.equal('');
-        }
-        done();
-      });
-    });
-  },
+  // 'Optional Twitter meta image should have content if present': (client) => {
+  //   client.perform((done) => {
+  //     client.element('css selector', 'meta[name="twitter:image"]', (result) => {
+  //       if (result.value && result.value.ELEMENT) {
+  //         client.expect.element('meta[name="twitter:image"]')
+  //           .to.have.attribute('content').not.equal('');
+  //       }
+  //       done();
+  //     });
+  //   });
+  // },
 
-  'Optional OG meta image should have content if present': (client) => {
-    client.perform((done) => {
-      client.element('css selector', 'meta[property="og:image"]', (result) => {
-        if (result.value && result.value.ELEMENT) {
-          client.expect.element('meta[property="og:image"]')
-            .to.have.attribute('content').not.equal('');
-        }
-        done();
-      });
-    });
-  },
+  // 'Optional OG meta image should have content if present': (client) => {
+  //   client.perform((done) => {
+  //     client.element('css selector', 'meta[property="og:image"]', (result) => {
+  //       if (result.value && result.value.ELEMENT) {
+  //         client.expect.element('meta[property="og:image"]')
+  //           .to.have.attribute('content').not.equal('');
+  //       }
+  //       done();
+  //     });
+  //   });
+  // },
 
-  'If optional author info is present, check it is defined': (client) => {
-    client.perform((done) => {
-      client.element('css selector', 'meta[name="twitter:creator"]', (result) => {
-        if (result.value && result.value.ELEMENT) {
-          client.expect.element('meta[name="twitter:creator"]')
-            .to.have.attribute('content').not.equal('@individual_account');
-          client.expect.element('meta[name="twitter:creator"]')
-            .to.have.attribute('content').not.equal('');
+  // 'If optional author info is present, check it is defined': (client) => {
+  //   client.perform((done) => {
+  //     client.element('css selector', 'meta[name="twitter:creator"]', (result) => {
+  //       if (result.value && result.value.ELEMENT) {
+  //         client.expect.element('meta[name="twitter:creator"]')
+  //           .to.have.attribute('content').not.equal('@individual_account');
+  //         client.expect.element('meta[name="twitter:creator"]')
+  //           .to.have.attribute('content').not.equal('');
 
-          client.expect.element('meta[property="article:author"]')
-            .to.have.attribute('content').not.equal('');
-        }
-        done();
-      });
-    });
-  },
+  //         client.expect.element('meta[property="article:author"]')
+  //           .to.have.attribute('content').not.equal('');
+  //       }
+  //       done();
+  //     });
+  //   });
+  // },
 
   'If optional ft.track:product tag is present, check it is defined': (client) => {
     client.perform((done) => {
