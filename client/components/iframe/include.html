@@ -1,0 +1,384 @@
+
+	<style>
+
+@font-face{
+	font-family:"BentonSans";
+	src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-3.woff") format("woff");
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face{
+	font-family:"BentonSans";
+	src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-3.woff") format("woff");
+	font-style: normal;
+	font-weight: bold;
+}
+
+#FTi{
+	/*font-family:BentonSans, Georgia, "Times New Roman", Times, serif;*/
+	font-size:14px;
+	color:#333333;
+	cursor:default;
+	margin:0 auto;
+	padding:0px;
+   -webkit-tap-highlight-color: rgba(0,0,0,0);
+-webkit-user-select: none;
+       -moz-user-select:none;
+	user-select:none;
+	overflow: hidden;
+}
+
+a{
+	color:#2e6e9e;
+       text-decoration:none;
+	cursor:default;
+}
+
+a:hover{
+	color:#000000;
+    text-decoration:none;
+	cursor:pointer;
+}
+
+#FTi .fullWidth{
+	width:100%;
+/*	top:0px;
+	left:0px;*/
+	/*border:1px solid #e9decf;*/
+	/*visibility:hidden;*/
+}
+
+#FTi .wideWidth{
+	width:884px;
+	top:0px;
+	left:0px;
+	/*border:1px solid #e9decf;*/
+	visibility:hidden;
+}
+
+#FTi .narrowWidth{
+	width:566px;
+	top:0px;
+	left:0px;
+	/*border:1px solid #e9decf;*/
+	visibility:hidden;
+}
+
+#FTi .titleLarge{
+	font-size:24px;
+	text-transform:uppercase;
+	color:#333;
+	padding:4px 0px 12px 10px;
+	background-color:#e9decf;
+	height:22px;
+	border-bottom:1px solid #a7a59b;
+}
+
+#FTi .titleSmall{
+	font-size:16px;
+       font-weight:bold;
+	color:#333;
+	padding:4px 0px 12px 10px;
+	background-color:#e9decf;
+	height:12px;
+	border-top:4px solid #a7a59b;
+       border-bottom:1px solid #a7a59b;
+}
+
+#FTi .loader{
+	position:absolute;
+	top:48%;	
+	width:100%;
+	height:32px;
+	background: url(http://interactive.ftdata.co.uk/imgs/ftLoader2013Squares.gif) no-repeat center;
+	visibility:hidden;
+	z-index:9999;
+}
+
+#FTi #precache{
+	position:absolute;
+	width:1px;
+	height:1px;
+/*	top:-10000px;
+	left:-10000px;
+	overflow:hidden;*/
+}
+
+#FTi .loaderText{
+	position:relative;
+	top:34px;
+	text-align:center;
+	color:#A7A59B;
+	font-size:12px;
+}
+
+#FTi .content{
+	padding:10px;
+	/*min-height:600px;*/
+	overflow:hidden;
+}
+
+#FTi .footer{
+	display: none;
+	/*font-family:BentonSans, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#333333;
+	height:22px;
+	left: 0px;
+	background-color: #fff1e0;
+	padding:8px 10px 10px 10px;
+	border-top:1px solid #d9cdbe;*/
+	/*border-bottom:7px solid #e9decf;*/
+/*       z-index:9999;
+	position:relative;*/
+}
+
+#FTi .footer #source{
+	/*font-style:italic;*/
+}
+
+#FTi .footer #credits{
+}
+
+#FTi .footer #logo{
+/*	float:right;
+	position:relative;
+	top:-1px;
+	width:131px;
+	height:22px;*/
+}
+
+#FTi .errorMessage{
+	position: absolute;
+	top:250px;
+	width:586px;
+	background-color:#fff1e0;
+	z-index:9999;
+	border:1px solid #333;
+	visibility:hidden;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:16px;
+	color:#333;
+	font-style:italic;	
+	padding:10px;
+	padding-left:22px;
+}
+
+#FTi .errorMessage a{
+	text-decoration:none;
+	color:#2e6e9e;	
+}
+
+#FTi .errorBground{
+	position: absolute;
+	top:0px;
+	left: 0px;
+	background-color:#000;
+	width:884px;
+	height:564px;
+	opacity:0.60;
+	filter:alpha(opacity=60);
+	z-index:9998;
+	cursor:default;
+	visibility:hidden;
+}
+
+#FTi #sourcesCredits{
+	/*display:none;*/
+	position:absolute;
+	left:0px;
+	bottom:39px;
+	background-color:#f6e9d8;
+	z-index:5000;
+	border-top:1px solid #a7a59b;	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#333;	
+	line-height:16px;
+	padding:10px;
+       width:100%; /*changed in code */
+	/*moz-box-shadow: 1px 1px 4px #000;
+	webkit-box-shadow: 1px 1px 4px #000;
+	box-shadow: 1px 1px 4px #000;*/
+}
+
+#FTi #sourceLink{
+       cursor:pointer;
+       color:#2e6e9e;
+       font-style:normal;
+}
+
+rect{
+	fill: none;
+	pointer-events: all;
+}
+
+pre{
+	font-size: 18px;
+}
+
+line{
+	stroke: #000;
+	stroke-width: 1.5px;
+}
+
+text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	fill:#000000;
+	pointer-events:none;
+}
+
+text .linkName{
+	pointer-events:all;
+}
+
+path.link{
+	fill: none;
+	stroke: #cec6b9;
+	stroke-width: 1.5px;
+	opacity:1;
+}
+
+.string, .regexp{
+	color: #f39;
+}
+
+.keyword{
+	color: #00c;
+}
+
+.comment{
+	color: #777;
+	font-style: oblique;
+}
+
+.number{
+	color: #369;
+}
+
+.class, .special{
+	color: #1181B8;
+}
+
+a{
+	color:#2e6e9e;
+       text-decoration:none;
+	cursor:default;
+}
+
+a:hover{
+	color:#000000;
+       text-decoration:none;
+	cursor:pointer;
+}
+
+.hint{
+	position: absolute;
+	right: 0;
+	width: 1280px;
+	font-size: 12px;
+	color: #999;
+}
+
+.node circle{
+	cursor: pointer;
+	fill: #fff;
+	stroke: steelblue;
+	stroke-width: 1.5px;
+}
+
+.node rect{
+	cursor:pointer;
+}
+
+.toolTip{
+	font-family:Arial, Helvetica, sans-serif;
+	background-color:#333;
+	margin:2px;
+	padding:4px;
+	/*position:absolute;*/
+	border:0px solid #fff1e0;
+	color:#fff1e0;
+	z-index:10000;
+	pointer-events:none;
+}
+
+.infoPane{
+	position:absolute;
+	left:17px;
+	top:49px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	background-color:rgba(25,25,25,.9);
+	max-width:160px;
+	margin:2px;
+	padding:4px;
+	position:absolute;
+	border:0px solid rgba(0,0,0,.9);
+	color:#fff1e0;
+	z-index:10000;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	display:none;
+	pointer-events:none;
+}
+
+.infoPane .category{
+	font-weight:bold;
+	font-style:italic;
+	letter-spacing: 1px;
+}
+
+.infoPane .spacer {
+	width:1px;
+	height:5px;
+}
+	</style>
+
+	<div id="FTi">
+	<!-- <link rel="stylesheet" href="./components/iframe/css/style.css" /> -->
+
+		<div class="fullWidth"> <!-- fullWidth, wideWidth or narrowWidth -->
+			<!-- <div class="titleSmall">Lineage tree</div> --> <!-- titleSmall or titleLarge --> <!-- if you do not want a title, comment this line out -->			
+			<div class="errorMessageHolder">
+              		<div class="errorMessage"></div>
+				<div class="errorBground"></div>
+			</div>
+			
+			<div class="content">
+				<div style="position:absolute; top:-1000px; left:-1000px;"></div>
+				<input id="slider" type="range" style="display:none" />
+				<div class="d3"></div>
+				<div class="toolTip" style="position:absolute; top:0px;"></div>
+				<div class="toolTipImg" style="position:absolute; top:-1000px;"></div>
+				<div class="infoPane"></div>
+				<div class="diamond" style="display: none">&#9830;</div>
+				<!--<div style="background:url(img/3x3.png); width:100px; height:15px;"></div>-->
+			</div>
+			
+			<div class="footer">
+	            <div id="footerContents">
+	                   <div id="source"><!-- <b>Source:&nbsp;</b> --></div>
+	                   <div id="credits"><!-- <b>Interactive:&nbsp;</b> --></div>
+	            </div>
+			</div>
+                     <!-- <div id="sourcesCredits"></div> -->
+		</div>
+		
+		<div class="loader">
+			<div class="loaderText">Loading</div>
+		</div>
+
+		<div id="precache"></div>
+		
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/jquery.xcolor.min.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/d3/d3.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/d3/d3.layoutBF.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/scriptApr2015.js"></script>
+	</div>

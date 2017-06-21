@@ -22,7 +22,7 @@ var dataType = "interactiveDB"; //googleDrive, interactiveDB, jsonp (heroku)
 
 var exampleImages = [];
 
-var jsonURL = "http://interactive.ftdata.co.uk/features/saudiTree/json/saudi.json";
+var jsonURL = "./components/iframe/json/saudi.json";
 var treeWidth = 1800, 
 	treeHeight = 990, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
 	i = 0, //id # used
@@ -841,7 +841,7 @@ function createLegend(){
 		.attr('width', 1) //when using userSpaceOnUse, this must be 972
 		.attr('height', 1) //when using userSpaceOnUse, this must be 86
 		.append('svg:image')
-		.attr('xlink:href', 'img/saudiLegendv2.png')
+		.attr('xlink:href', './components/iframe/img/saudiLegendv2.png')
 		.attr('x', -18)
 		.attr('y', 0)
 		.attr('width', 972)
@@ -1130,7 +1130,7 @@ function dateMove(e){
 			$(".toolTip").stop().css("opacity", 0);
 			$(".toolTipImg").css("left", -1000);
 			
-			$(".infoPane").stop().html("<div style='width:100px; height:125px; margin-bottom:2px; margin-left:1px; background-image: url(img/saudis/" + activeHoverNode[1].picture + ")'></div><div class='hoverName' style='font-size:14px;'><b>" + activeHoverNode[1].name.replace("[likely]","") + "</b>" + "</div><div class='hoverDetail'><span class='category'></span>" + activeHoverNode[1].born + " - " + isLiving(activeHoverNode[1].died) + "</div><div style='margin-left:1px; margin-right:1px; margin-top:3px; margin-bottom:3px; height:2px; background:" + activeHoverNode[1].color + "'></div><div class='hoverDetail'>" + "<span class='category'>Title</span><br />" + activeHoverNode[1].title + "</div><div class='spacer'></div>");
+			$(".infoPane").stop().html("<div style='width:100px; height:125px; margin-bottom:2px; margin-left:1px; background-image: url(./components/iframe/img/saudis/" + activeHoverNode[1].picture + ")'></div><div class='hoverName' style='font-size:14px;'><b>" + activeHoverNode[1].name.replace("[likely]","") + "</b>" + "</div><div class='hoverDetail'><span class='category'></span>" + activeHoverNode[1].born + " - " + isLiving(activeHoverNode[1].died) + "</div><div style='margin-left:1px; margin-right:1px; margin-top:3px; margin-bottom:3px; height:2px; background:" + activeHoverNode[1].color + "'></div><div class='hoverDetail'>" + "<span class='category'>Title</span><br />" + activeHoverNode[1].title + "</div><div class='spacer'></div>");
 			//$(".dateLine").attr("y", activeHoverNode[2].top).attr("width", 3).attr("height", barHeight + 1).css("opacity", .25);
 			
 			if(activeHoverNode[1].ruleStart < activeHoverNode[1].ruleEnd){

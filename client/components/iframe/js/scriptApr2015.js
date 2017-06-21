@@ -22,7 +22,7 @@ var dataType = "interactiveDB"; //googleDrive, interactiveDB, jsonp (heroku)
 
 var exampleImages = [];
 
-var jsonURL = "http://interactive.ftdata.co.uk/features/saudiTree/json/saudiApr2015b.json";
+var jsonURL = "./components/iframe/json/saudiApr2015b.json";
 var treeWidth = 1800, 
 	treeHeight = 990, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
 	i = 0, //id # used
