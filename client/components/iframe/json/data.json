@@ -36,7 +36,7 @@
 			"bio":"Faisal bin Abdulaziz became crown prince in 1953, a position he held until King Saud was forced to abdicate and he became King. He ruled until 1975 when he was assassinated by his nephew",			
 			"children": [
 				{
-					"name": "Prince Saud bin Faisal bin Abdulaziz",
+					"name": "Prince Saud bin Faisal",
 					"born": 1940,
 					"died": "NA",
 					"title": "Minister of Foreign Affairs from 1975 to April 2015",
@@ -47,7 +47,7 @@
 					"bio":"The world's longest-serving foreign minister"
 				},
 				{
-					"name": "Prince Khalid bin Faisal bin Abdulaziz",
+					"name": "Prince Khalid bin Faisal",
 					"born": 1940,
 					"died": "NA",
 					"title": "Education minister, Governor of Mecca province from 2007 to December 2013, member of Allegiance Council",
@@ -55,10 +55,10 @@
 					"ruleEnd": "NA",
 					"color": "#75a5c2",
 					"picture": "khalid_bin_faisal.jpg",
-					"bio": "Seen as a potential heir to the throne"
+					"bio": ""
 				},
 				{
-					"name": " Prince Turki bin Faisal bin Abdulaziz",
+					"name": " Prince Turki bin Faisal",
 					"born": 1945,
 					"died": "NA",
 					"title": "Former head of Saudi Arabia's intelligence agency, former ambassador to the US",
@@ -66,7 +66,7 @@
 					"ruleEnd": "NA",
 					"color": "#75a5c2",
 					"picture": "turki_bin_faisal.jpg",
-					"bio": "Seen as a potential heir to the throne"
+					"bio": ""
 				}
 			]
 		},
@@ -132,7 +132,7 @@
 					"bio": "Fahd held the title of crown prince from 1975-1982 when he became King. He suffered a stroke in late 1995 and Abdullah bin Abdulaziz, then Crown Prince became de-facto ruler of the Kingdom",
 					"children": [
 						{
-							"name": "Prince Mohammed bin Fahd bin Abdulaziz",
+							"name": "Prince Mohammed bin Fahd",
 							"born": 1950,
 							"died": "NA",
 							"title": "Governor of Eastern Province from 1985 to 2013, member of Allegiance Council",
@@ -140,10 +140,10 @@
 							"ruleEnd": "NA",
 							"color": "#75a5c2",
 							"picture": "mohammed_bin_fahd.jpg",
-							"bio": "Seen as a potential heir to the throne"
+							"bio": ""
 						},
 						{
-							"name": "Prince Abdulaziz bin Fahd bin Abdulaziz",
+							"name": "Prince Abdulaziz bin Fahd",
 							"born": 1964,
 							"died": "NA",
 							"title": "Minister of state and cabinet member",
@@ -168,7 +168,7 @@
 					"bio": "Prince Sultan was a member of the influential group of brothers called the Sudairi Seven and a full brother to King Fahd. He became crown prince in 2005, a position he held until his death in 2011",
 					"children": [
 						{
-							"name": "Prince Khalid bin Sultan bin Abdulaziz",
+							"name": "Prince Khalid bin Sultan",
 							"born": 1949,
 							"died": "NA",
 							"title": "Deputy minister of defence from 2011 to April 2013, member of Allegiance Council",
@@ -176,10 +176,10 @@
 							"ruleEnd": "NA",
 							"color": "#75a5c2",
 							"picture": "khalid_bin_sultan.jpg",
-							"bio": "Commander of Saudi forces during the first Gulf War. Seen as a potential heir to the throne"
+							"bio": "Commander of Saudi forces during the first Gulf War. "
 						},
 						{
-							"name": "Prince Bandar bin Sultan bin Abdulaziz",
+							"name": "Prince Bandar bin Sultan",
 							"born": 1950,
 							"died": "NA",
 							"title": "Secretary general of the national security council and director general of the Saudi intelligence agency from July 2012 to April 2014",
@@ -224,7 +224,7 @@
 					"bio": "Prince Nayef was a former interior minister and a member of the influential group of brothers known as the Sudairi Seven. He was known for his authoritarian views and became crown prince in 2011. He died less than a year later",
 					"children": [
 						{
-							"name": "Prince Saud bin Nayef bin Abdulaziz",
+							"name": "Prince Saud bin Nayef",
 							"born": 1956,
 							"died": "NA",
 							"title": "Governor of the oil-rich Eastern province since January 2013, member of Allegiance Council",
@@ -234,7 +234,7 @@
 							"picture": "default.jpg"
 						},
 						{
-							"name": "Prince Mohammed bin Nayef bin Abdulaziz",
+							"name": "Prince Mohammed bin Nayef",
 							"born": 1959,
 							"died": "NA",
 							"title": "Former crown prince, Minister of the Interior since November 2012",
@@ -262,7 +262,7 @@
 					"bio": "King Salman is member of the Sudairi Seven and became crown prince in 2012. He rose to the throne on 23 January 2015 at a time of turmoil in the oil markets",
 					"children": [
 						{
-							"name": "Prince Sultan bin Salman bin Abdulaziz",
+							"name": "Prince Sultan bin Salman",
 							"born": 1956,
 							"died": "NA",
 							"title": "Minister for Tourism, former astronaut",
@@ -272,7 +272,7 @@
 							"picture": "sultan_bin_salman.jpg"
 						},
 						{
-							"name": "Prince Abdulaziz bin Salman bin Abdulaziz",
+							"name": "Prince Abdulaziz bin Salman",
 							"born": 1960,
 							"died": "NA",
 							"title": "Assistant petroleum minister",
@@ -282,7 +282,7 @@
 							"picture": "abdulaziz_bin_salman.jpg"
 						},
 						{
-							"name": "Prince Faisal bin Salman bin Abdulaziz",
+							"name": "Prince Faisal bin Salman",
 							"born": 1970,
 							"died": "NA",
 							"title": "Chairman of Saudi Research and Marketing Group, governor of Madinah province",
@@ -292,7 +292,7 @@
 							"picture": "faisal_bin_salman.jpg"
 						},
 						{
-							"name": "Crown Prince Mohammed bin Salman bin Abdulaziz [likely]",
+							"name": "Crown Prince Mohammed bin Salman [likely]",
 							"born": 1980,
 							"died": "NA",
 							"title": "Crown Prince, Minister of Defence, head of Royal Court",
@@ -333,7 +333,7 @@
 			"bio": "Abdullah bin Abdulaziz became crown prince in 1982 and king in 2005. He died on 23 January 2015",
 			"children": [
 				{
-					"name": "Prince Khalid bin Abdullah bin Abdulaziz",
+					"name": "Prince Khalid bin Abdullah",
 					"born": 1950,
 					"died": "NA",
 					"title": "Member of Allegiance Council",
@@ -343,7 +343,7 @@
 					"picture": "default.jpg"
 				},
 				{
-					"name": "Prince Miteb bin Abdullah bin Abdulaziz",
+					"name": "Prince Miteb bin Abdullah",
 					"born": 1952,
 					"died": "NA",
 					"title": "Minister of the national guard",
@@ -351,10 +351,10 @@
 					"ruleEnd": "NA",
 					"color": "#75a5c2",
 					"picture": "miteb_bin_abdullah.jpg",
-					"bio": "Seen as a potential heir to the throne"
+					"bio": ""
 				},
 				{
-					"name": "Prince Abdulaziz bin Abdulllah bin Abdulaziz",
+					"name": "Prince Abdulaziz bin Abdulllah",
 					"born": 1963,
 					"died": "NA",
 					"title": "Deputy foreign minister, minister of state",
@@ -376,7 +376,7 @@
 			"ruleEnd": "NA",
 			"color": "#83a584",
 			"picture": "prince_migren.jpg",
-			"bio": "Removed as crown prince on April 29, after being first in line to the throne for just three months. Previously deputy crown prince since March 2014"
+			"bio": "Removed as crown prince on April 29, 2015, after being first in line to the throne for just three months. Previously deputy crown prince since March 2014."
 		},
 		{
 			"name": "Other brothers",
@@ -399,7 +399,7 @@
 					"bio": "Oldest surviving son of King Abdulaziz",
 					"children": [
 						{
-							"name": "Prince Faisal bin Bandar bin Abdulaziz",
+							"name": "Prince Faisal bin Bandar",
 							"born": 1943,
 							"died": "NA",
 							"title": "Member of Allegiance Council, governor of Qassim province",
@@ -443,7 +443,7 @@
 					"picture": "default.jpg",
 					"children": [
 						{
-							"name": "Prince Mansour bin Miteb bin Abdulaziz",
+							"name": "Prince Mansour bin Miteb",
 							"born": 1952,
 							"died": "NA",
 							"title": "Minister of Municipal and Rural Affairs",
@@ -465,7 +465,7 @@
 					"picture": "prince_talal.jpg",
 					"children": [
 						{
-							"name": "Prince Alwaleed bin Talal bin Abdulaziz",
+							"name": "Prince Alwaleed bin Talal",
 							"born": 1955,
 							"died": "NA",
 							"title": "Wealthy businessman",
@@ -497,7 +497,7 @@
 					"picture": "prince_nawaf.jpg",
 					"children": [
 						{
-							"name": "Prince Mohammed bin Nawaf bin Abdulaziz",
+							"name": "Prince Mohammed bin Nawaf",
 							"born": 1953,
 							"died": "NA",
 							"title": "Ambassador to the United Kingdom and Republic of Ireland",
@@ -507,7 +507,7 @@
 							"picture": "mohammed_bin_nawaf.jpg"
 						},
 						{
-							"name": "Prince Abdulaziz bin Nawaf bin Abdulaziz",
+							"name": "Prince Abdulaziz bin Nawaf",
 							"born": 1979,
 							"died": "NA",
 							"title": "Member of Allegiance Council",
