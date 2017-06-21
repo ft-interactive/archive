@@ -1,0 +1,559 @@
+{
+	"name": "King Abdulaziz",
+	"born": 1876,
+	"died": 1953,
+	"title": "King",
+	"ruleStart": 1932,
+	"ruleEnd": 1953,
+	"color": "#debd62",
+	"picture":"king_abdulaziz.jpg",
+	"bio":"King Abdulaziz, the first king of modern Saudi Arabia, ruled for 21 years. The line of succession then passed to his eldest son Saud",
+	"children": [
+		{
+			"name": "King Saud bin Abdulaziz",
+			"born": 1902,
+			"died": 1969,
+			"title": "King",
+			"cpStart": 1933,
+			"cpEnd": 1953,
+			"ruleStart": 1953,
+			"ruleEnd": 1964,
+			"color": "#83a584",
+			"picture": "king_saud.jpg",
+			"bio":"Saud bin Abdulaziz was the eldest son of King Abdulaziz. He became crown prince in 1933 and King in 1953 following his father's death"			
+		},
+		{
+			"name": "King Faisal bin Abdulaziz",
+			"born": 1904,
+			"died": 1975,
+			"title": "King",
+			"cpStart": 1953,
+			"cpEnd": 1964,
+			"ruleStart": 1964,
+			"ruleEnd": 1975,
+			"color": "#83a584",
+			"picture": "king_faisal.jpg",
+			"bio":"Faisal bin Abdulaziz became crown prince in 1953, a position he held until King Saud was forced to abdicate and he became King. He ruled until 1975 when he was assassinated by his nephew",			
+			"children": [
+				{
+					"name": "Prince Saud bin Faisal bin Abdulaziz",
+					"born": 1940,
+					"died": "NA",
+					"title": "Minister of Foreign Affairs",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "saud_al_faisal.jpg",
+					"bio":"Seen as a potential heir to the throne"
+				},
+				{
+					"name": "Prince Khalid bin Faisal bin Abdulaziz [likely]",
+					"born": 1940,
+					"died": "NA",
+					"title": "Education minister, Governor of Mecca province from 2007 to December 2013, member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "khalid_bin_faisal.jpg",
+					"bio": "Seen as a potential heir to the throne"
+				},
+				{
+					"name": " Prince Turki bin Faisal bin Abdulaziz [likely]",
+					"born": 1945,
+					"died": "NA",
+					"title": "Former head of Saudi Arabia's intelligence agency, former ambassador to the US",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "turki_bin_faisal.jpg",
+					"bio": "Seen as a potential heir to the throne"
+				}
+			]
+		},
+		{
+			"name": "Jauhara bint Musaed Bin Jiluwi",
+			"nameDetails": "",
+			"born": 1906,
+			"died": 1907,
+			"title": "Wife",
+			"ruleStart": "NA",
+			"ruleEnd": "NA",
+			"color": "#aaaaaa",
+			"children": [
+				{
+					"name": "Prince Mohammed bin Abdulaziz",
+					"born": 1910,
+					"died": 1988,
+					"title": "Former governor of Madinah province",
+					"cpStart": 1964,
+					"cpEnd": 1965,
+					"ruleStart": "1965",
+					"ruleEnd": "1965",
+					"color": "#83a584",
+					"picture": "prince_mohammed.jpg",
+					"bio": "Prince Mohammed became crown prince in 1964 when King Saud died, but he only held the position for a year. He renounced succession and never became king"
+				},
+				{
+					"name": "King Khalid bin Abdulaziz",
+					"born": 1912,
+					"died": 1982,
+					"title": "King",
+					"cpStart": 1965,
+					"cpEnd": 1975,
+					"ruleStart": 1975,
+					"ruleEnd": 1982,
+					"color": "#83a584",
+					"picture": "king_khalid.jpg",
+					"bio": "Khalid became crown prince in 1965 and King in 1975 when his half-brother King Faisal was murdered. He ruled until his death in 1982"
+				}
+			]
+		},
+		{
+			"name": "Hissa bint Ahmad Al-Sudairi",
+			"nameDetails": "(Mother of the Sudairi Seven)",
+			"born": 1910,
+			"died": 1910,
+			"title": "Wife",
+			"ruleStart": "NA",
+			"ruleEnd": "NA",
+			"color": "#658f66",
+			"children": [
+				{
+					"name": "King Fahd bin Abdulaziz",
+					"born": 1922,
+					"died": 2005,
+					"title": "King",
+					"cpStart": 1975,
+					"cpEnd": 1982,
+					"ruleStart": 1982,
+					"ruleEnd": 2005,
+					"color": "#83a584",
+					"picture": "king_fahd.jpg",
+					"bio": "Fahd held the title of crown prince from 1975-1982 when he became King. He suffered a stroke in late 1995 and Abdullah bin Abdulaziz, then Crown Prince became de-facto ruler of the Kingdom",
+					"children": [
+						{
+							"name": "Prince Mohammed bin Fahd bin Abdulaziz [likely]",
+							"born": 1950,
+							"died": "NA",
+							"title": "Governor of Eastern Province from 1985 to 2013, member of Allegiance Council",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "mohammed_bin_fahd.jpg",
+							"bio": "Seen as a potential heir to the throne"
+						},
+						{
+							"name": "Prince Abdulaziz bin Fahd bin Abdulaziz",
+							"born": 1964,
+							"died": "NA",
+							"title": "Minister of state and cabinet member",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "abdulaziz_bin_fahd.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Sultan bin Abdulaziz",
+					"born": 1924,
+					"died": 2011,
+					"title": "Crown Prince",
+					"cpStart": 2005,
+					"cpEnd": 2011,
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_sultan.jpg",
+					"bio": "Prince Sultan was a member of the influential group of brothers called the Sudairi Seven and a full brother to King Fahd. He became crown prince in 2005, a position he held until his death in 2011",
+					"children": [
+						{
+							"name": "Prince Khalid bin Sultan bin Abdulaziz [likely]",
+							"born": 1949,
+							"died": "NA",
+							"title": "Deputy minister of defence from 2011 to April 2013, member of Allegiance Council",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "khalid_bin_sultan.jpg",
+							"bio": "Commander of Saudi forces during the first Gulf War. Seen as a potential heir to the throne"
+						},
+						{
+							"name": "Prince Bandar bin Sultan bin Abdulaziz",
+							"born": 1950,
+							"died": "NA",
+							"title": "Secretary general of the national security council and director general of the Saudi intelligence agency from July 2012 to April 2014",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "bandar_bin_sultan.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Abdul Rahman bin Abdulaziz",
+					"born": 1931,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_abdulrahman.jpg"
+				},
+				{
+					"name": "Prince Turki bin Abdulaziz",
+					"born": 1932,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				},
+				{
+					"name": "Prince Nayef bin Abdulaziz",
+					"born": 1933,
+					"died": 2012,
+					"title": "Crown Prince",
+					"cpStart": 2011,
+					"cpEnd": 2012,
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_nayef.jpg",
+					"bio": "Prince Nayef was a former interior minister and a member of the influential group of brothers known as the Sudairi Seven. He was known for his authoritarian views and became crown prince in 2011. He died less than a year later",
+					"children": [
+						{
+							"name": "Prince Saud bin Nayef bin Abdulaziz",
+							"born": 1956,
+							"died": "NA",
+							"title": "Governor of the oil-rich Eastern province since January 2013, member of Allegiance Council",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "default.jpg"
+						},
+						{
+							"name": "Prince Mohammed bin Nayef bin Abdulaziz [likely]",
+							"born": 1959,
+							"died": "NA",
+							"title": "Deputy Crown Prince, Minister of the Interior since November 2012",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "mohammed_bin_nayef.jpg",
+							"bio": "Named deputy crown prince on 23 Janurary 2015 by King Salman bin Abdulaziz"
+						}
+					]
+				},
+				{
+					"name": "King Salman bin Abdulaziz",
+					"born": 1936,
+					"died": "NA",
+					"title": "King",
+					"cpStart": 2012,
+					"cpEnd": 2015,
+					"ruleStart": 2015,
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_salman.jpg",
+					"bio": "King Salman is member of the Sudairi Seven and became crown prince in 2012. He rose to the throne on 23 January 2015 at a time of turmoil in the oil markets",
+					"children": [
+						{
+							"name": "Prince Sultan bin Salman bin Abdulaziz",
+							"born": 1956,
+							"died": "NA",
+							"title": "Minister for Tourism, former astronaut",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "sultan_bin_salman.jpg"
+						},
+						{
+							"name": "Prince Abdulaziz bin Salman bin Abdulaziz",
+							"born": 1960,
+							"died": "NA",
+							"title": "Assistant petroleum minister",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "abdulaziz_bin_salman.jpg"
+						},
+						{
+							"name": "Prince Faisal bin Salman bin Abdulaziz",
+							"born": 1970,
+							"died": "NA",
+							"title": "Chairman of Saudi Research and Marketing Group, governor of Madinah province",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "faisal_bin_salman.jpg"
+						},
+						{
+							"name": "Prince Mohammed bin Salman bin Abdulaziz",
+							"born": 1980,
+							"died": "NA",
+							"title": "Minister of Defence, head of Royal Court",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "default.jpg"
+
+						}
+					]
+				},
+				{
+					"name": "Prince Ahmed bin Abdulaziz",
+					"born": 1942,
+					"died": "NA",
+					"title": "Former interior minister, member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				}
+			]
+		},
+		{
+			"name": "King Abdullah bin Abdulaziz",
+			"born": 1923,
+			"died": 2015,
+			"title": "King and custodian of the two holy mosques",
+			"cpStart": 1982,
+			"cpEnd": 2005,
+			"ruleStart": 2005,
+			"ruleEnd": 2015,
+			"color": "#83a584",
+			"picture": "king_abdullah.jpg",
+			"bio": "Abdullah bin Abdulaziz became crown prince in 1982 and king in 2005. He died on 23 January 2015",
+			"children": [
+				{
+					"name": "Prince Khalid bin Abdullah bin Abdulaziz",
+					"born": 1950,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "default.jpg"
+				},
+				{
+					"name": "Prince Miteb bin Abdullah bin Abdulaziz [likely]",
+					"born": 1952,
+					"died": "NA",
+					"title": "Minister of the national guard",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "miteb_bin_abdullah.jpg",
+					"bio": "Seen as a potential heir to the throne"
+				},
+				{
+					"name": "Prince Abdulaziz bin Abdulllah bin Abdulaziz",
+					"born": 1963,
+					"died": "NA",
+					"title": "Deputy foreign minister, minister of state",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#75a5c2",
+					"picture": "abdulaziz_bin_abdullah.jpg"		
+				}
+			]
+		},
+		{
+			"name": "Crown Prince Muqrin bin Abdulaziz [likely]",
+			"born": 1945,
+			"died": "NA",
+			"title": "Crown prince, member of Allegiance Council",
+			"cpStart": 2015,
+			"cpEnd": "NA",
+			"ruleStart": "NA",
+			"ruleEnd": "NA",
+			"color": "#83a584",
+			"picture": "prince_migren.jpg",
+			"bio": "Named crown prince by King Salman bin Abdulaziz on 23 January 2015. Previously deputy crown prince since March 2014"
+		},
+		{
+			"name": "Other brothers",
+			"born": 1916,
+			"died": 1917,
+			"title": "Unsure",
+			"ruleStart": "NA",
+			"ruleEnd": "NA",
+			"color": "#74736c",
+			"children": [
+				{
+					"name": "Prince Bandar bin Abdulaziz",
+					"born": 1923,
+					"died": "NA",
+					"title": "NA",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg",
+					"bio": "Oldest surviving son of King Abdulaziz",
+					"children": [
+						{
+							"name": "Prince Faisal bin Bandar bin Abdulaziz",
+							"born": 1943,
+							"died": "NA",
+							"title": "Member of Allegiance Council, governor of Qassim province",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "default.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Musaed bin Abdulaziz",
+					"born": 1923,
+					"died": 2013,
+					"title": "Prince",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg",
+					"bio": "Father of Faisal bin Musaed, who assassinated King Faisal"
+					
+				},
+				{
+					"name": "Prince Mishaal bin Abdulaziz",
+					"born": 1926,
+					"died": "NA",
+					"title": "Chairman of the Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				},
+				{
+					"name": "Prince Miteb bin Abdulaziz",
+					"born": 1931,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg",
+					"children": [
+						{
+							"name": "Prince Mansour bin Miteb bin Abdulaziz",
+							"born": 1952,
+							"died": "NA",
+							"title": "Minister of Municipal and Rural Affairs",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "mansour_bin_miteb.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Talal bin Abdulaziz",
+					"born": 1931,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_talal.jpg",
+					"children": [
+						{
+							"name": "Prince Alwaleed bin Talal bin Abdulaziz",
+							"born": 1955,
+							"died": "NA",
+							"title": "Wealthy businessman",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "alwaleed_bin_talal.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Badr bin Abdulaziz",
+					"born": 1932,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				},
+				{
+					"name": "Prince Nawaf bin Abdulaziz",
+					"born": 1932,
+					"died": "NA",
+					"title": "Former director general of the Saudi intelligence agency",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_nawaf.jpg",
+					"children": [
+						{
+							"name": "Prince Mohammed bin Nawaf bin Abdulaziz",
+							"born": 1953,
+							"died": "NA",
+							"title": "Ambassador to the United Kingdom and Republic of Ireland",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "mohammed_bin_nawaf.jpg"
+						},
+						{
+							"name": "Prince Abdulaziz bin Nawaf bin Abdulaziz",
+							"born": 1979,
+							"died": "NA",
+							"title": "Member of Allegiance Council",
+							"ruleStart": "NA",
+							"ruleEnd": "NA",
+							"color": "#75a5c2",
+							"picture": "default.jpg"
+						}
+					]
+				},
+				{
+					"name": "Prince Mamduh bin Abdulaziz",
+					"born": 1940,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				},
+				{
+					"name": "Prince Abdul Elah bin Abdulaziz",
+					"born": 1939,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_abdulelah.jpg"
+				},
+				{
+					"name": "Prince Sattam bin Abdulaziz",
+					"born": 1941,
+					"died": 2013,
+					"title": "Governor of Riyadh province, member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "prince_sattam.jpg"
+				},
+				{
+					"name": "Prince Mashhur bin Abdulaziz",
+					"born": 1942,
+					"died": "NA",
+					"title": "Member of Allegiance Council",
+					"ruleStart": "NA",
+					"ruleEnd": "NA",
+					"color": "#83a584",
+					"picture": "default.jpg"
+				}
+			]
+		}
+	]
+}
