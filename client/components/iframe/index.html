@@ -15,6 +15,8 @@
 	</head>
 	
 	<body id="FTi">
+	<!-- <link rel="stylesheet" href="./components/iframe/css/style.css" /> -->
+
 		<div class="fullWidth"> <!-- fullWidth, wideWidth or narrowWidth -->
 			<!-- <div class="titleSmall">Lineage tree</div> --> <!-- titleSmall or titleLarge --> <!-- if you do not want a title, comment this line out -->			
 			<div class="errorMessageHolder">
@@ -23,21 +25,21 @@
 			</div>
 			
 			<div class="content">
-				<div style="position:absolute; top:-1000px; left:-1000px;">This document should be in English.This document should be in English.This document should be in English.This document should be in English.This document should be in English.This document should be in English.This document should be in English.This document should be in English.</div>
+				<div style="position:absolute; top:-1000px; left:-1000px;"></div>
 				<input id="slider" type="range" style="display:none" />
 				<div class="d3"></div>
-				<div class="toolTip" style="position:absolute; top:-1000px;"></div>
-				<div class="toolTipImg" style="position:absolute; top:-1000px;"></div>
+				<div class="toolTip" style="position:relative; top:0px;"></div>
+				<div class="toolTipImg" style="position:relative; top:-10000px;"></div>
 				<div class="infoPane"></div>
 				<div class="diamond" style="display: none">&#9830;</div>
 				<!--<div style="background:url(img/3x3.png); width:100px; height:15px;"></div>-->
 			</div>
 			
 			<div class="footer">
-                            <div id="footerContents">
-                                   <div id="source"><b>Source:&nbsp;</b></div>
-                                   <div id="credits"><b>Interactive:&nbsp;</b></div>
-                            </div>
+	            <div id="footerContents">
+	                   <div id="source"><!-- <b>Source:&nbsp;</b> --></div>
+	                   <div id="credits"><!-- <b>Interactive:&nbsp;</b> --></div>
+	            </div>
 			</div>
                      <!-- <div id="sourcesCredits"></div> -->
 		</div>
@@ -45,13 +47,14 @@
 		<div class="loader">
 			<div class="loaderText">Loading</div>
 		</div>
+
 		<div id="precache"></div>
 		
-		<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
-              <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-              <script type="text/javascript" src="./components/iframe/js/jquery.xcolor.min.js"></script>
-              <script type="text/javascript" src="./components/iframe/js/d3/d3.js"></script>
-              <script type="text/javascript" src="./components/iframe/js/d3/d3.layoutBF.js"></script>
-              <script type="text/javascript" src="./components/iframe/js/scriptApr2015.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/jquery.xcolor.min.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/d3/d3.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/d3/d3.layoutBF.js"></script>
+      <script type="text/javascript" src="./components/iframe/js/script.js"></script>
 	</body>
 </html>

@@ -16,7 +16,7 @@ export default () => ({ // eslint-disable-line
   headline: 'Saudi Arabia’s royal family tree',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: '',
+  summary: 'How the princes in the House of Saud’s order of succession are related',
 
   topic: {
     name: 'Saudi Arabia',
@@ -41,7 +41,6 @@ export default () => ({ // eslint-disable-line
   byline: [
     { name: 'Katie Carnie', url: 'https://www.ft.com/search?q=Katie+Carnie' },
     { name: 'Ben Freese', url: 'https://www.ft.com/search?q=Ben+Freese' },
-    { name: 'Robin Kwong', url: 'https://www.ft.com/stream/3947e926-da60-335e-b41c-7eb6dd2dd26b' },
   ],
 
   // Appears in the HTML <title>

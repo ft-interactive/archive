@@ -34,7 +34,7 @@ var diagonal;
 var visTop;
 var vis;
 
-var verticalOffset = $('.content').offset().top + parseInt($('.content').css("padding-top"));
+var verticalOffset = 0;
 
 var infoPaneLeft = $(".infoPane").css("left");
 
@@ -1068,7 +1068,13 @@ function dateMove(e){
 		
 		var toolY = selectLineHeight + verticalOffset > e.pageY + 25 + barHeight ? e.pageY + 25 : verticalOffset + selectLineHeight - barHeight;
 		
-		$(".dateLine").attr("x", e.pageX - 1); //e.pageX -1 for the browsers that don't support pointer-events = none;
+		var windowWidth = window.innerWidth;
+		var vizWidth = document.getElementById('FTi').offsetWidth - 20;
+		var horizontalOffset = (windowWidth - vizWidth) / 2;
+
+		$(".dateLine").attr("x", e.pageX - horizontalOffset);
+
+		// $(".dateLine").attr("x", e.pageX - 1); //e.pageX -1 for the browsers that don't support pointer-events = none;
 		
 		$(".toolTip").css({
 			top: (toolY) + "px",
