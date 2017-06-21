@@ -24,7 +24,7 @@ var exampleImages = [];
 
 var jsonURL = "./components/iframe/json/saudiApr2015b.json";
 var treeWidth = 1800, 
-	treeHeight = 990, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
+	treeHeight = 800, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
 	i = 0, //id # used
 	root,
 	paddingLeft = 20,
@@ -48,7 +48,7 @@ var textIndent = 10;
 var yearToPixel = 6.55; //6.75 is perfect for fullwidth (972px) //6 is default
 var n = 9; //timeline - number of date intervals
 var dateVals = []; //timeline - first and last value
-var currentYear = 2015.2; //need currentYear, theoretically the timeline could incorporate future dates
+var currentYear = 2017.2; //need currentYear, theoretically the timeline could incorporate future dates
 var showing = [];
 var nodesTotal = 0;
 var ignoredNodes = 0;
@@ -295,7 +295,13 @@ function initD3(){
 		root.children.forEach(function(d){if(d.title=="Wife"){toggle(d);}else{}}); //show the wives
 
 		toggle(root.children[1]);
+		toggle(root.children[4]);
+		toggle(root.children[3].children[5]);
+		toggle(root.children[3].children[1]);
+		toggle(root.children[3].children[2]);
+		toggle(root.children[3].children[3]);
 		toggle(root.children[3].children[4]);
+
 		update(root);
 		
 		dates = dates.sort(function(a,b){ //sort value (smallest to largest)

@@ -47,7 +47,7 @@
 					"bio":"The world's longest-serving foreign minister"
 				},
 				{
-					"name": "Prince Khalid bin Faisal bin Abdulaziz [likely]",
+					"name": "Prince Khalid bin Faisal bin Abdulaziz",
 					"born": 1940,
 					"died": "NA",
 					"title": "Education minister, Governor of Mecca province from 2007 to December 2013, member of Allegiance Council",
@@ -58,7 +58,7 @@
 					"bio": "Seen as a potential heir to the throne"
 				},
 				{
-					"name": " Prince Turki bin Faisal bin Abdulaziz [likely]",
+					"name": " Prince Turki bin Faisal bin Abdulaziz",
 					"born": 1945,
 					"died": "NA",
 					"title": "Former head of Saudi Arabia's intelligence agency, former ambassador to the US",
@@ -132,7 +132,7 @@
 					"bio": "Fahd held the title of crown prince from 1975-1982 when he became King. He suffered a stroke in late 1995 and Abdullah bin Abdulaziz, then Crown Prince became de-facto ruler of the Kingdom",
 					"children": [
 						{
-							"name": "Prince Mohammed bin Fahd bin Abdulaziz [likely]",
+							"name": "Prince Mohammed bin Fahd bin Abdulaziz",
 							"born": 1950,
 							"died": "NA",
 							"title": "Governor of Eastern Province from 1985 to 2013, member of Allegiance Council",
@@ -168,7 +168,7 @@
 					"bio": "Prince Sultan was a member of the influential group of brothers called the Sudairi Seven and a full brother to King Fahd. He became crown prince in 2005, a position he held until his death in 2011",
 					"children": [
 						{
-							"name": "Prince Khalid bin Sultan bin Abdulaziz [likely]",
+							"name": "Prince Khalid bin Sultan bin Abdulaziz",
 							"born": 1949,
 							"died": "NA",
 							"title": "Deputy minister of defence from 2011 to April 2013, member of Allegiance Council",
@@ -234,17 +234,17 @@
 							"picture": "default.jpg"
 						},
 						{
-							"name": "Crown prince Mohammed bin Nayef bin Abdulaziz [likely]",
+							"name": "Prince Mohammed bin Nayef bin Abdulaziz",
 							"born": 1959,
 							"died": "NA",
-							"title": "Crown Prince, Minister of the Interior since November 2012",
+							"title": "Former crown prince, Minister of the Interior since November 2012",
 							"cpStart": 2015,
-							"cpEnd": "NA",
+							"cpEnd": 2017,
 							"ruleStart": "NA",
 							"ruleEnd": "NA",
 							"color": "#75a5c2",
 							"picture": "mohammed_bin_nayef.jpg",
-							"bio": "Named crown prince on April 29, 2015 by King Salman bin Abdulaziz"
+							"bio": "Named minister of the interior in 2012 and crown prince on April 29, 2015; removed from both roles on 21 June 2017 by King Salman bin Abdulaziz"
 						}
 					]
 				},
@@ -292,15 +292,17 @@
 							"picture": "faisal_bin_salman.jpg"
 						},
 						{
-							"name": "Prince Mohammed bin Salman bin Abdulaziz [likely]",
+							"name": "Crown Prince Mohammed bin Salman bin Abdulaziz [likely]",
 							"born": 1980,
 							"died": "NA",
-							"title": "Deputy Crown Prince, Minister of Defence, head of Royal Court",
+							"title": "Crown Prince, Minister of Defence, head of Royal Court",
+							"cpStart": 2017,
+							"cpEnd": "NA",
 							"ruleStart": "NA",
 							"ruleEnd": "NA",
 							"color": "#75a5c2",
 							"picture": "mohammed_bin_salman.jpg",
-							"bio": "King Salman's favourite son became deputy crown prince on April 29, 2015. He faced his first personal test as defence minister by leading the war in Yemen."
+							"bio": "King Salman's favourite son became deputy crown prince on April 29, 2015. He faced his first personal test as defence minister by leading the war in Yemen, and was made Crown Prince on 21 June 2017."
 
 						}
 					]
@@ -341,7 +343,7 @@
 					"picture": "default.jpg"
 				},
 				{
-					"name": "Prince Miteb bin Abdullah bin Abdulaziz [likely]",
+					"name": "Prince Miteb bin Abdullah bin Abdulaziz",
 					"born": 1952,
 					"died": "NA",
 					"title": "Minister of the national guard",
