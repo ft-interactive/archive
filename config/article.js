@@ -1,7 +1,7 @@
 export default () => ({ // eslint-disable-line
 
   // link file UUID
-  id: '1392ab72-64e2-11e4-ab2d-00144feabdc0',
+  id: '27c2476a-9291-11e4-b213-00144feabdc0',
 
   // canonical URL of the published page
   // https://ig.ft.com/archive get filled in by the ./configure script
@@ -9,16 +9,16 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2014-11-06T11:21:00Z'),
+  publishedDate: new Date('2015-04-29T11:37:00Z'),
 
-  headline: 'World’s fastest lifts race to the top of the tallest buildings',
+  headline: 'Saudi Arabia’s royal family tree',
 
   // summary === standfirst (Summary is what the content API calls it)
   summary: '',
 
   topic: {
-    name: 'Industrials',
-    url: 'https://www.ft.com/companies/industrials',
+    name: 'Middle East & North Africa',
+    url: 'https://www.ft.com/world/mideast',
   },
 
   relatedArticle: {
@@ -37,13 +37,13 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Tanya Powley', url: 'https://www.ft.com/stream/authorsId/Q0ItMDAwMDg0MA==-QXV0aG9ycw==' },
-    { name: 'John Burn-Murdoch', url: 'https://www.ft.com/john-burn-murdoch' },
-    { name: 'Cleve Jones', url: 'https://www.ft.com/stream/authorsId/Q0ItQ0o2Nzg5MA==-QXV0aG9ycw==' },
+    { name: 'Katie Carnie', url: 'https://www.ft.com/search?q=Katie+Carnie' },
+    { name: 'Ben Freese', url: 'https://www.ft.com/search?q=Ben+Freese' },
+    { name: 'Robin Kwong', url: 'https://www.ft.com/stream/3947e926-da60-335e-b41c-7eb6dd2dd26b' },
   ],
 
   // Appears in the HTML <title>
-  title: 'World’s fastest lifts race to the top of the tallest buildings',
+  title: 'Saudi Arabia’s royal family tree',
 
   // meta data
   description: '',
@@ -62,12 +62,12 @@ export default () => ({ // eslint-disable-line
         optional social meta data?
   */
   // General social
-  // socialImage: '',
+ socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A0843f3ce-ee59-11e4-98f9-00144feab7de?source=ig&width=1400',
   // socialHeadline: '',
   // socialSummary:  '',
 
   // TWITTER
-  // twitterImage: '',
+ twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A0843f3ce-ee59-11e4-98f9-00144feab7de?source=ig&width=1400',
   // twitterCreator: '@individual's_account',
   // tweetText:  '',
   // twitterHeadline:  '',
