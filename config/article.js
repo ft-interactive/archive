@@ -63,18 +63,18 @@ export default () => ({ // eslint-disable-line
         optional social meta data?
   */
   // General social
- socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A0843f3ce-ee59-11e4-98f9-00144feab7de?source=ig&width=1400',
+ socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
   // socialHeadline: '',
   // socialSummary:  '',
 
   // TWITTER
- twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3A0843f3ce-ee59-11e4-98f9-00144feab7de?source=ig&width=1400',
+ twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
   // twitterCreator: '@individual's_account',
   // tweetText:  '',
   // twitterHeadline:  '',
 
   // FACEBOOK
-  // facebookImage: '',
+facebookImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
   // facebookHeadline: '',
 
   tracking: {
