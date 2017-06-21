@@ -38,13 +38,13 @@
 				{
 					"name": "Prince Saud bin Faisal",
 					"born": 1940,
-					"died": "NA",
+					"died": 2015,
 					"title": "Minister of Foreign Affairs from 1975 to April 2015",
 					"ruleStart": "NA",
 					"ruleEnd": "NA",
 					"color": "#75a5c2",
 					"picture": "saud_al_faisal.jpg",
-					"bio":"The world's longest-serving foreign minister"
+					"bio":"The world's longest-serving foreign minister died shortly after retiring in 2015."
 				},
 				{
 					"name": "Prince Khalid bin Faisal",
