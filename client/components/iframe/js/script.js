@@ -22,9 +22,9 @@ var dataType = "interactiveDB"; //googleDrive, interactiveDB, jsonp (heroku)
 
 var exampleImages = [];
 
-var jsonURL = "./components/iframe/json/saudi.json";
+var jsonURL = "./components/iframe/json/data.json";
 var treeWidth = 1800, 
-	treeHeight = 990, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
+	treeHeight = 800, //690 for parentBarShrink = true; //875 for parentBarShrink = false //990 expanded with the newest json
 	i = 0, //id # used
 	root,
 	paddingLeft = 20,
@@ -48,7 +48,7 @@ var textIndent = 10;
 var yearToPixel = 6.55; //6.75 is perfect for fullwidth (972px) //6 is default
 var n = 9; //timeline - number of date intervals
 var dateVals = []; //timeline - first and last value
-var currentYear = 2017.2; //need currentYear, theoretically the timeline could incorporate future dates
+var currentYear = 2017.5; //need currentYear, theoretically the timeline could incorporate future dates
 var showing = [];
 var nodesTotal = 0;
 var ignoredNodes = 0;
@@ -295,7 +295,13 @@ function initD3(){
 		root.children.forEach(function(d){if(d.title=="Wife"){toggle(d);}else{}}); //show the wives
 
 		toggle(root.children[1]);
+		toggle(root.children[4]);
+		toggle(root.children[3].children[5]);
+		toggle(root.children[3].children[1]);
+		toggle(root.children[3].children[2]);
+		toggle(root.children[3].children[3]);
 		toggle(root.children[3].children[4]);
+
 		update(root);
 		
 		dates = dates.sort(function(a,b){ //sort value (smallest to largest)
@@ -841,7 +847,7 @@ function createLegend(){
 		.attr('width', 1) //when using userSpaceOnUse, this must be 972
 		.attr('height', 1) //when using userSpaceOnUse, this must be 86
 		.append('svg:image')
-		.attr('xlink:href', './components/iframe/img/saudiLegendv2.png')
+		.attr('xlink:href', 'img/saudiLegendv2.png')
 		.attr('x', -18)
 		.attr('y', 0)
 		.attr('width', 972)
@@ -1130,7 +1136,7 @@ function dateMove(e){
 			$(".toolTip").stop().css("opacity", 0);
 			$(".toolTipImg").css("left", -1000);
 			
-			$(".infoPane").stop().html("<div style='width:100px; height:125px; margin-bottom:2px; margin-left:1px; background-image: url(./components/iframe/img/saudis/" + activeHoverNode[1].picture + ")'></div><div class='hoverName' style='font-size:14px;'><b>" + activeHoverNode[1].name.replace("[likely]","") + "</b>" + "</div><div class='hoverDetail'><span class='category'></span>" + activeHoverNode[1].born + " - " + isLiving(activeHoverNode[1].died) + "</div><div style='margin-left:1px; margin-right:1px; margin-top:3px; margin-bottom:3px; height:2px; background:" + activeHoverNode[1].color + "'></div><div class='hoverDetail'>" + "<span class='category'>Title</span><br />" + activeHoverNode[1].title + "</div><div class='spacer'></div>");
+			$(".infoPane").stop().html("<div style='width:100px; height:125px; margin-bottom:2px; margin-left:1px; background-image: url(img/saudis/" + activeHoverNode[1].picture + ")'></div><div class='hoverName' style='font-size:14px;'><b>" + activeHoverNode[1].name.replace("[likely]","") + "</b>" + "</div><div class='hoverDetail'><span class='category'></span>" + activeHoverNode[1].born + " - " + isLiving(activeHoverNode[1].died) + "</div><div style='margin-left:1px; margin-right:1px; margin-top:3px; margin-bottom:3px; height:2px; background:" + activeHoverNode[1].color + "'></div><div class='hoverDetail'>" + "<span class='category'>Title</span><br />" + activeHoverNode[1].title + "</div><div class='spacer'></div>");
 			//$(".dateLine").attr("y", activeHoverNode[2].top).attr("width", 3).attr("height", barHeight + 1).css("opacity", .25);
 			
 			if(activeHoverNode[1].ruleStart < activeHoverNode[1].ruleEnd){
