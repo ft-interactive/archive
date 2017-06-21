@@ -10,6 +10,8 @@ export default () => ({ // eslint-disable-line
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
   publishedDate: new Date('2015-04-29T11:37:00Z'),
+  publishedDate: new Date(),
+
 
   headline: 'Saudi Arabia’s royal family tree',
 
@@ -17,8 +19,8 @@ export default () => ({ // eslint-disable-line
   summary: '',
 
   topic: {
-    name: 'Middle East & North Africa',
-    url: 'https://www.ft.com/world/mideast',
+    name: 'Saudi Arabia',
+    url: 'https://www.ft.com/topics/places/Saudi_Arabia',
   },
 
   relatedArticle: {
