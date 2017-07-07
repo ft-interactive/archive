@@ -1,5 +1,40 @@
-    <div id="body">
-      <div id="credits"><p>Lifts are shown traveling between each building’s ground floor and its highest occupied floor. All elevator top speeds were provided to the CTBUH by manufacturers/constructors</p><span>Sources: <a target="_blank" href="http://skyscrapercenter.com/">Council on Tall Buildings and Urban Habitat (CTBUH)</a>, <a class="thin">FT Research</a></span></div>
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <head>
+    <script src="d3.min.js"></script>
+    <script type='text/javascript' src='jquery211.min.js'></script>
+    <link rel="stylesheet" href="https://h2.ft.com/build/v2/bundles/css?modules=o-fonts@^2" />
+    <style type='text/css'>
+    text{font-family:"BentonSans",sans-serif;cursor:default;font-size:14px;}
+    a{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+    .clearbutton{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+    #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal;}
+    div#credits{position:absolute;top:780px;left:0px;}
+    #credits span{font-size:11px;font-weight:bold;}
+    #credits span#author{position:relative;left:16px;}
+    #credits span#maps{position:relative;left:8px;}
+    span{color:#74736c;font-family:"BentonSans",sans-serif;cursor:default;}
+    a:hover{background-color:#74736c;color:white;}
+    #credits a:hover{background-color:none;color:#000;}
+    #credits a.ftr:hover{background-color:none;color:#74736c;}
+    #credits a.ftr{color:#74736c;}
+    #credits a.thin{font-weight:normal;color:#74736c;}
+    .axis path,
+    .axis line{fill:none;stroke:#a7a59b;shape-rendering:crispEdges;}
+    .axis text{font-family:"BentonSans"sans-serif;font-size: 12px;fill:#74736c;}
+    #yaxisintro.axis path{opacity:0;}
+    #credits p {
+    font-family: BentonSans,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    color: #74736c;
+    clear: both;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="credits"><p>Lifts are shown traveling between each building's ground floor and its highest occupied floor. All elevator top speeds were provided to the CTBUH by manufacturers/constructors</p><span>Sources: <a target="_blank" href="http://skyscrapercenter.com/">Council on Tall Buildings and Urban Habitat (CTBUH)</a>, <a class="thin">FT Research</a></span><span id="author">Graphic by: <a target="_blank" href="https://twitter.com/jburnmurdoch">John Burn-Murdoch</a> and <a target="_blank" href="https://twitter.com/cleveco">Cleve Jones</a></span></div>
     <script type="text/javascript">
         $(document).ready(function(){
         $( ".countryspan" ).hover(function() {
@@ -14,11 +49,11 @@
     </script>
     
     <script type="text/javascript">
-    d3.select("div#body")
+    d3.select("body")
       .style("margin","0")
       .style("background-color","#fff1e0");
 
-    d3.select("div#body").append("div")
+    d3.select("body").append("div")
       .attr("id","container")
       .style("height","680")
       .style("width","972")
@@ -1467,5 +1502,8 @@ svg.selectAll(".line5")
 
     animate()
 
+
+
     </script>
-  </div>
+  </body>
+</html>
