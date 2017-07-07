@@ -1,7 +1,7 @@
 export default () => ({ // eslint-disable-line
 
   // link file UUID
-  id: '27c2476a-9291-11e4-b213-00144feabdc0',
+  id: '1392ab72-64e2-11e4-ab2d-00144feabdc0',
 
   // canonical URL of the published page
   // https://ig.ft.com/archive get filled in by the ./configure script
@@ -9,18 +9,16 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2015-04-29T11:37:00Z'),
-  publishedDate: new Date(),
+  publishedDate: new Date('2014-11-06T11:21:00Z'),
 
-
-  headline: 'Saudi Arabia’s royal family tree',
+  headline: 'World’s fastest lifts race to the top of the tallest buildings',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: 'How the princes in the House of Saud’s order of succession are related',
+  summary: '',
 
   topic: {
-    name: 'Saudi Arabia',
-    url: 'https://www.ft.com/topics/places/Saudi_Arabia',
+    name: 'Industrials',
+    url: 'https://www.ft.com/companies/industrials',
   },
 
   relatedArticle: {
@@ -39,12 +37,13 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Katie Carnie', url: 'https://www.ft.com/search?q=Katie+Carnie' },
-    { name: 'Ben Freese', url: 'https://www.ft.com/search?q=Ben+Freese' },
+    { name: 'Tanya Powley', url: 'https://www.ft.com/stream/authorsId/Q0ItMDAwMDg0MA==-QXV0aG9ycw==' },
+    { name: 'John Burn-Murdoch', url: 'https://www.ft.com/john-burn-murdoch' },
+    { name: 'Cleve Jones', url: 'https://www.ft.com/stream/authorsId/Q0ItQ0o2Nzg5MA==-QXV0aG9ycw==' },
   ],
 
   // Appears in the HTML <title>
-  title: 'Saudi Arabia’s royal family tree',
+  title: 'World’s fastest lifts race to the top of the tallest buildings',
 
   // meta data
   description: '',
@@ -63,18 +62,18 @@ export default () => ({ // eslint-disable-line
         optional social meta data?
   */
   // General social
- socialImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
+  // socialImage: '',
   // socialHeadline: '',
   // socialSummary:  '',
 
   // TWITTER
- twitterImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
+  // twitterImage: '',
   // twitterCreator: '@individual's_account',
   // tweetText:  '',
   // twitterHeadline:  '',
 
   // FACEBOOK
-facebookImage: 'https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Aa89c74fa-56a2-11e7-80b6-9bfa4c1f83d2?source=ig&width=1400',
+  // facebookImage: '',
   // facebookHeadline: '',
 
   tracking: {
