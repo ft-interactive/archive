@@ -1,0 +1,1509 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <head>
+    <script src="d3.min.js"></script>
+    <script type='text/javascript' src='jquery211.min.js'></script>
+    <link rel="stylesheet" href="https://h2.ft.com/build/v2/bundles/css?modules=o-fonts@^2" />
+    <style type='text/css'>
+    text{font-family:"BentonSans",sans-serif;cursor:default;font-size:14px;}
+    a{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+    .clearbutton{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+    #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal;}
+    div#credits{position:absolute;top:780px;left:0px;}
+    #credits span{font-size:11px;font-weight:bold;}
+    #credits span#author{position:relative;left:16px;}
+    #credits span#maps{position:relative;left:8px;}
+    span{color:#74736c;font-family:"BentonSans",sans-serif;cursor:default;}
+    a:hover{background-color:#74736c;color:white;}
+    #credits a:hover{background-color:none;color:#000;}
+    #credits a.ftr:hover{background-color:none;color:#74736c;}
+    #credits a.ftr{color:#74736c;}
+    #credits a.thin{font-weight:normal;color:#74736c;}
+    .axis path,
+    .axis line{fill:none;stroke:#a7a59b;shape-rendering:crispEdges;}
+    .axis text{font-family:"BentonSans"sans-serif;font-size: 12px;fill:#74736c;}
+    #yaxisintro.axis path{opacity:0;}
+    #credits p {
+    font-family: BentonSans,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    color: #74736c;
+    clear: both;
+    margin-bottom: 8px;
+    margin-top: 2px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="credits"><p>Lifts are shown traveling between each building's ground floor and its highest occupied floor. All elevator top speeds were provided to the CTBUH by manufacturers/constructors</p><span>Sources: <a target="_blank" href="http://skyscrapercenter.com/">Council on Tall Buildings and Urban Habitat (CTBUH)</a>, <a class="thin">FT Research</a></span><span id="author">Graphic by: <a target="_blank" href="https://twitter.com/jburnmurdoch">John Burn-Murdoch</a> and <a target="_blank" href="https://twitter.com/cleveco">Cleve Jones</a></span></div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        $( ".countryspan" ).hover(function() {
+            $(".countryspan." + ($(this).attr('class').split(' ')[1])).css("border","2px solid #43423e");}, function() {
+            $(".countryspan." + ($(this).attr('class').split(' ')[1])).css("border","2px solid #a7a59b");}
+        );
+        $( ".clearbutton" ).hover(function() {
+            $(".clearbutton").css({"background-color":"#74736c","color":"white"});}, function() {
+            $(".clearbutton").css({"background-color":"#e9decf","color":"#43423e"});}
+        );
+    });
+    </script>
+    
+    <script type="text/javascript">
+    d3.select("body")
+      .style("margin","0")
+      .style("background-color","#fff1e0");
+
+    d3.select("body").append("div")
+      .attr("id","container")
+      .style("height","680")
+      .style("width","972")
+      .style("background-color","transparent");
+
+    d3.select("div#container").append("div")
+      .attr("id","chart")
+      .style("position","relative")
+      .style("top","0px")
+      .style("height","675")
+      .style("width","972")
+      .style("background-color","none");
+
+    d3.select("div#container").append("div")
+      .attr("id","captionouter")
+      .style("height","93")
+      .style("width","972")
+      .style("padding","0px")
+      .style("margin","0px")
+      .style("background-color","#f6e9d8")
+      .style("border-radius","3px");
+
+    d3.select("div#captionouter").append("div")
+      .attr("id","captiondiv")
+      .style("height","90")
+      .style("width","960")
+      .style("padding","2px 6px 2px 6px")
+      .style("margin-right","50px");
+
+    d3.select("div#captiondiv").append("span")
+      .attr("id","caption")
+      .text("They cost billions of dollars, symbolise economic power and are photographed by millions, but the world's tallest buildings also compete on a lesser known measure that pushes the limits of modern engineering: elevator speed. These ultra-fast lifts can reach speeds of 20 metres per second (45 mph) and feature technologies that use heat resistant brakes, mitigate excess vibration and adjust for air pressure to prevent ear blockages. Our graphic shows the top speeds of elevators in eight of the world's tallest and most famous buildings, and how far they have traveled since this web page loaded")
+      .style("position","relative")
+      .style("top","0px")
+      .style("left","0px")
+      .style("font-size","14px")
+      .style("line-height","22px");
+
+    d3.select("div#captiondiv").append("span")
+      .attr("id","captionaction")
+      .text("")
+      .style("position","relative")
+      .style("top","0px")
+      .style("left","0px")
+      .style("font-size","14px")
+      .style("font-weight","normal")
+      .style("color","#9e2f50");
+
+    d3.select("div#container").append("a")
+      .attr("href","#")
+      .attr("id","page2")
+      .style("display","none")
+      .text("Next >")
+      .style("border","solid 1px #43423e")
+      .style("position","absolute")
+      .style("top","35px")
+      .style("left","911px")
+      .style("z-index","1000")
+      .style("font-size","13px");
+
+    d3.select("div#container").append("a")
+      .attr("href","#")
+      .attr("id","restart")
+      .style("border","solid 1px #43423e")
+      .style("position","absolute")
+      .style("top","0px")
+      .style("left","910px")
+      .text("Restart")
+      .style("font-size","13px");
+
+    var svg = d3.select("div#chart").append("svg")
+      .style({"position":"relative","top":"10px"})
+      .attr("height","670")
+      .attr("width","972");
+
+    var circle1 = [0];
+
+    var start_val = 0,
+    duration = 1000,
+    end_val = [100]
+    end_val2 = [0];
+
+    var yticks = [100,200,300,400,500,600,700,800];
+
+    var ybaseline = [0];
+
+    var yScaletower1 = d3.scale.linear()
+                     .domain([0,800])
+                     .range([540, 40]);
+
+    var yAxistower1 = d3.svg.axis()
+                  .scale(yScaletower1)
+                  .orient("left")
+                  .tickValues([0,100,200,300,400,500,600,700,800]);
+
+    var yAxistower2 = d3.svg.axis()
+                  .scale(yScaletower1)
+                  .orient("left")
+                  .tickValues([0,100,200,300,400,500,600,700,800]);
+
+    d3.select("svg").append("g")
+    .attr("class", "axis")
+    .attr("id", "yaxistower1")
+    .attr("transform", "translate(32,0)")
+    .call(yAxistower1);
+
+    d3.select("svg").append("g")
+    .attr("class", "axis")
+    .attr("id", "yaxistower2")
+    .attr("transform", "translate(980,0)")
+    .call(yAxistower2);
+
+    d3.select("svg").append("text")
+    .attr("class","axistitle")
+    .attr("x","0")
+    .attr("y","15")
+    .style("font-size","14px")
+    .style("fill","#74736c")
+    .text("Height (m)")
+
+    svg.selectAll("line.horizontalGrid").data(yticks).enter()
+    .append("line")
+        .attr(
+        {
+            "class":"horizontalGrid",
+            "x1" : 0,
+            "x2" : 972,
+            "y1" : function(d){ return yScaletower1(d);},
+            "y2" : function(d){ return yScaletower1(d);},
+            "fill" : "none",
+            "shape-rendering" : "crispEdges",
+            "stroke" : "#cec6b9",
+            "stroke-width" : "1px",
+            "stroke-dasharray" : "1 1"
+        });
+
+    svg.selectAll("line.horizontalGrid2").data(ybaseline).enter()
+    .append("line")
+        .attr(
+        {
+            "class":"horizontalGrid",
+            "x1" : 0,
+            "x2" : 972,
+            "y1" : function(d){ return yScaletower1(d);},
+            "y2" : function(d){ return yScaletower1(d);},
+            "fill" : "none",
+            "shape-rendering" : "crispEdges",
+            "stroke" : "#cec6b9",
+            "stroke-width" : "1px"
+        });
+
+    svg.selectAll("#yaxistower1 line")
+        .style("opacity","0");
+
+    svg.selectAll("#yaxistower1 path")
+        .style("opacity","0");
+
+    svg.selectAll("#yaxistower2 line")
+        .style("opacity","0");
+
+    svg.selectAll("#yaxistower2 path")
+        .style("opacity","0");
+
+    d3.select("#yAxistower1 .tick:nth-of-type(1)")
+        .attr("transform","translate(0," + yScaletower1(10) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(2)")
+        .attr("transform","translate(0," + yScaletower1(110) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(3)")
+        .attr("transform","translate(0," + yScaletower1(210) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(4)")
+        .attr("transform","translate(0," + yScaletower1(310) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(5)")
+        .attr("transform","translate(0," + yScaletower1(410) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(6)")
+        .attr("transform","translate(0," + yScaletower1(510) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(7)")
+        .attr("transform","translate(0," + yScaletower1(610) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(8)")
+        .attr("transform","translate(0," + yScaletower1(710) + ")")
+
+    d3.select("#yAxistower1 .tick:nth-of-type(9)")
+        .attr("transform","translate(0," + yScaletower1(810) + ")")
+
+
+
+    d3.select("#yAxistower2 .tick:nth-of-type(1)")
+        .attr("transform","translate(0," + yScaletower1(10) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(2)")
+        .attr("transform","translate(0," + yScaletower1(110) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(3)")
+        .attr("transform","translate(0," + yScaletower1(210) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(4)")
+        .attr("transform","translate(0," + yScaletower1(310) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(5)")
+        .attr("transform","translate(0," + yScaletower1(410) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(6)")
+        .attr("transform","translate(0," + yScaletower1(510) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(7)")
+        .attr("transform","translate(0," + yScaletower1(610) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(8)")
+        .attr("transform","translate(0," + yScaletower1(710) + ")")
+
+    d3.select("#yAxistower2 .tick:nth-of-type(9)")
+        .attr("transform","translate(0," + yScaletower1(810) + ")")
+
+    d3.select("svg")
+        .append("polygon")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-73,-64) scale(1.32)")
+        .attr("id","ctf")
+        .attr("points","85.029,457.425 85.267,292.262 90.028,292.262 90.028,199.189 111.332,209.782 111.332,238.971   116.33,238.942 116.568,449.364 120.213,449.364 124.542,445.196 134.897,445.196 134.897,447.979 136.481,447.979 136.503,457.333   ")
+
+    d3.select("svg")
+        .append("path")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-118,-64) scale(1.32)")
+        .attr("id","shanghai")
+        .attr("d","M174.956,457.703v-4h3.645v-7.218h11.718c0,0,0.168-6.785,3.025-6.689  c2.858,0.093,11.051-0.026,11.051-0.026s-0.285-45.229,0.858-61.808c1.144-16.577,6.765-84.791,7.336-87.457  c0.573-2.669,2.097-32.395,2.287-40.586c0.189-8.193,0.572-32.583,0.38-37.727c-0.191-5.146-0.38-54.878-0.38-54.878  s-0.263-1.643,1.31-1.929c1.572-0.286,10.932-1.859,13.361-1.644l-0.143,6.001c0,0,6.788,1.144,8.217,1.858s2,0.43,2.073,4.931  c0.071,4.501,1.643,34.296,1.643,34.296l2.001,35.371c0,0,1.072,38.799,0.929,42.229s0.523,31.894,0.523,45.992  c0,14.101-0.189,39.061,0.191,48.588c0.381,9.528,0.571,23.629,2.097,38.682c1.524,15.051,2.667,28.773,2.667,28.773l0.809,2.096  l5.86,0.142l-0.43,9.003l5.431,0.428l0.285,1.285h9.29l-0.287,4.144L174.956,457.703z")
+
+    d3.select("svg")
+        .append("polyline")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-147,-64) scale(1.32)")
+        .attr("id","khalifa")
+        .attr("points","339.16,94.438 339.61,94.438 339.61,112.671 340.107,112.671 340.107,121.751 341.415,121.751     341.415,139.946 341.54,139.946 341.574,149.072 342.938,149.072 342.938,158.188 343.021,158.188 343.021,176.397     344.332,176.397 344.332,203.049 346.099,203.049 346.099,243.069 349.301,243.069 349.301,310.072 353.821,310.072     353.821,365.087 357.066,365.087 357.066,408.307 360.601,408.307 360.601,439.848 364.831,439.848 364.831,443.382     368.818,443.382 368.818,446.966 374.536,446.966 375.263,447.267 375.263,457.512 303.449,457.512 303.449,446.997     308.543,446.997 308.543,443.382 312.527,443.382 312.527,439.848 316.677,439.848 316.677,395.897 320.295,395.897     320.295,348.163 323.54,348.163 323.54,289.897 328.019,289.897 328.019,214.428 331.269,214.428 331.269,184.818     332.987,184.818 332.987,167.271 334.306,167.271 334.306,158.188 334.433,158.188 334.433,130.875 335.949,130.875     335.949,103.509 337.716,103.509 337.716,89.912 338.166,89.912 338.166,85.971 338.341,85.971 338.341,76.855 338.42,76.855     338.42,66.779 338.341,66.779 338.341,66.748 338.375,66.748 338.375,66.585 338.213,66.585 338.213,66.458 338.166,66.458     338.166,66.213 339.16,66.213 339.16,66.585 338.986,66.585 338.986,66.748 339.028,66.748 339.028,66.779 338.947,66.779     338.947,76.855 339.028,76.855 339.028,85.971 339.16,85.971 339.16,94.438   ")
+
+    d3.select("svg")
+        .append("polygon")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-159.5,-64) scale(1.32)")
+        .attr("id","oneworldtrade")
+        .attr("points","453.501,458.042 453.501,258.943 448.501,258.943 448.509,257.997 449.578,258.006 449.595,253.531   439.65,253.531 439.65,241.08 440.49,241.08 440.49,238.912 439.65,238.91 439.65,234.107 440.49,234.121 440.49,232.623   439.65,232.609 439.65,228.427 440.49,228.413 440.49,227.143 439.65,227.155 439.65,222.702 440.49,222.692 440.49,221.518   439.65,221.518 439.65,217.46 440.49,217.46 440.49,216.094 439.65,216.094 439.65,211.204 440.49,211.209 440.49,209.773   439.65,209.782 439.65,197.869 438.237,197.869 438.237,209.782 437.397,209.773 437.397,211.209 438.237,211.204 438.237,216.094   437.397,216.094 437.397,217.46 438.237,217.46 438.237,221.518 437.397,221.518 437.397,222.692 438.237,222.702 438.237,227.155   437.397,227.143 437.397,228.413 438.237,228.427 438.237,232.609 437.397,232.623 437.397,234.121 438.237,234.107 438.237,238.91   437.397,238.912 437.397,241.08 438.237,241.08 438.237,253.531 428.293,253.531 428.312,258.006 429.379,257.997 429.387,258.943   424.387,258.943 424.387,458.042 ")
+
+    d3.select("svg")
+        .append("polyline")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-155,-64) scale(1.32)")
+        .attr("id","willis")
+        .attr("points","549.077,284.294 549.077,457.592 515.227,457.592 515.227,246.013 517.276,246.013     517.276,231.055 517.521,231.055 517.521,228.181 517.784,228.181 517.784,231.055 518.095,231.055 518.095,246.013     519.34,246.013 519.34,223.821 519.587,223.821 519.587,212.177 519.904,212.177 519.904,202.123 520.898,202.123     520.898,212.177 521.149,212.177 521.149,223.821 521.709,223.821 521.709,246.013 522.46,246.013 522.46,241.893     530.496,241.893 530.496,246.013 531.25,246.013 531.25,220.949 531.495,220.949 531.495,212.177 531.741,212.177     531.741,204.941 532.545,204.941 532.545,212.177 532.81,212.177 532.81,220.949 533.302,220.949 533.302,246.013     534.367,246.013 534.367,231.055 534.612,231.055 534.612,228.181 534.855,228.181 534.855,231.055 535.103,231.055     535.103,246.013 537.729,246.013 537.729,284.294 549.077,284.294   ")
+
+    d3.select("svg")
+        .append("polyline")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-184,-64) scale(1.32)")
+        .attr("id","taipei")
+        .attr("points","650.683,400.56 654.978,457.592 592.334,457.592 592.334,434.214 599.18,434.214 599.18,428.349    603.296,426.054 607.852,424.495 612.473,423.742 617.271,424.232 621.875,425.79 625.927,428.05 628.235,400.56 626.428,384.53    627.989,384.53 626.428,368.509 627.989,368.509 626.428,352.435 628.235,352.435 626.746,336.409 628.235,336.409    626.746,320.384 628.235,320.384 626.428,304.307 627.989,304.307 626.746,288.286 628.235,288.286 626.428,272.258    633.101,272.258 633.101,266.39 636.396,266.39 635.099,251.877 638.396,251.877 638.396,249.562 637.149,248.32 637.149,247.268    638.396,247.268 638.706,214.416 639.703,214.416 640.214,247.268 641.458,247.268 641.458,248.32 639.951,249.562    640.214,251.877 643.503,251.877 642.267,266.39 645.571,266.39 645.571,272.258 651.929,272.258 650.683,288.286 652.178,288.286    650.683,304.307 652.178,304.307 650.683,320.384 651.929,320.384 650.683,336.409 651.929,336.409 650.683,352.435    652.178,352.435 650.932,368.509 652.178,368.509 650.683,384.53 651.929,384.53 650.683,400.56  ")
+
+    d3.select("svg")
+        .append("polyline")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-206,-64) scale(1.32)")
+        .attr("id","empirestate")
+        .attr("points","781.202,451.36 781.202,457.592 713.254,457.592 713.254,451.36 718.562,451.36 718.562,426.786     726.04,426.786 726.04,408.277 728.911,408.277 728.911,328.054 730.958,328.109 730.958,308.915 734.393,308.915     734.393,296.761 736.825,296.761 736.825,294.569 738.631,294.569 738.631,293.013 739.505,293.013 739.505,292.328     742.377,292.328 742.377,290.334 742.943,290.334 742.943,287.335 743.253,287.335 743.253,284.66 743.621,284.66     743.621,281.979 743.936,281.979 743.936,268.826 744.305,268.826 744.305,268.076 744.688,268.076 744.688,267.339     745.111,267.339 745.111,266.586 746.738,266.586 746.738,257.479 747.107,257.479 747.369,245.45 747.369,260.791     747.736,260.791 747.736,266.586 749.367,266.586 749.367,267.339 749.731,267.339 749.731,268.076 750.1,268.076 750.1,268.826     750.54,268.826 750.54,281.979 750.853,281.979 750.853,284.66 751.222,284.66 751.222,287.335 751.54,287.335 751.54,290.334     752.096,290.334 752.096,292.328 754.968,292.328 754.968,293.013 755.844,293.013 755.844,294.569 757.649,294.569     757.649,296.761 760.015,296.761 760.015,308.915 763.515,308.915 763.515,328.109 765.562,328.054 765.562,408.277     768.437,408.277 768.437,426.786 775.916,426.786 775.916,451.36 781.202,451.36   ")
+
+    d3.select("svg")
+        .append("polygon")
+        .attr("fill","#CEC6B9")
+        .attr("transform","translate(-227,-64) scale(1.32)")
+        .attr("id","chrysler")
+        .attr("points","853.979,305.161 854.222,315.574 855.223,315.574 855.223,318.432 855.904,318.432    855.904,322.298 856.655,322.298 856.655,326.098 857.338,326.098 857.338,328.038 858.076,328.038 858.076,329.966    858.774,329.966 858.774,331.837 859.509,331.837 859.509,333.766 860.456,333.766 860.456,337.632 860.942,337.632    860.942,353.385 863.308,353.385 863.308,355.331 862.817,355.331 862.817,358.182 863.308,358.182 863.308,360.124    862.817,360.124 862.817,406.6 865.246,406.6 865.246,408.034 864.254,408.034 864.254,413.268 867.174,413.268 867.174,418.062    867.612,418.062 867.612,430.53 871.48,430.53 871.48,457.763 836.018,457.763 836.018,430.53 839.885,430.53 839.885,418.062    840.326,418.062 840.326,413.268 843.25,413.268 843.25,408.034 842.249,408.034 842.249,406.6 844.681,406.6 844.681,360.124    844.193,360.124 844.193,358.182 844.681,358.182 844.681,355.331 844.193,355.331 844.193,353.385 846.555,353.385    846.555,337.632 847.047,337.632 847.047,333.766 847.991,333.766 847.991,331.837 848.742,331.837 848.742,329.966    849.43,329.966 849.43,328.038 850.163,328.038 850.163,326.098 850.86,326.098 850.86,322.298 851.599,322.298 851.599,318.432    852.277,318.432 852.277,315.574 853.278,315.574 853.54,305.161  ")
+
+    var myFormat = d3.format(',')
+
+    var animate = function() {
+
+    var movelift1 = function () {
+    repeat1();
+    function repeat1() {
+    d3.selectAll(".liftblock1")
+    .transition()
+    .duration(24750)
+    .attr("y",yScaletower1(503))
+    .transition()
+    .delay(24750)
+    .duration(24750)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat1);
+    }
+    }
+
+    var changetext1 = function () {
+    var ct1 = d3.select(".loops1").text().split(' ')[0].replace(",","") * 990 + 495;
+    var ct11 = d3.select(".loops1").text().split(' ')[0].replace(",","") * 990 + 990;
+    d3.selectAll(".txt1")
+    .transition()
+    .duration(24750)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct1),
+                prec = ct1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(24750)
+    .duration(24750)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct11),
+                prec = ct11,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext1)}
+
+    var changelooptext1 = function () {
+    var bar1 = function() {
+    var foo1 = d3.select(".loops1").text().split(' ')[0] * 1;
+    d3.selectAll(".loops1")
+    .transition()
+    .delay(49500)
+    .text(function() {return (foo1 + 1) + ' round trips';})
+    .each("end",bar1)
+    };
+
+    var barfirst1 = function() {
+    var foofirst1 = d3.select(".loops1").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops1")
+    .transition()
+    .delay(97000 + 49500)
+    .text(function() {return (foofirst1 + 1) + ' round trips';})
+    .each("end",bar1)
+    };
+
+
+    d3.selectAll(".loops1")
+    .transition()
+    .delay(47500)
+    .text("1 round trip")
+    .transition()
+    .delay(97000)
+    .text("2 round trips")
+    barfirst1()
+
+    
+    }
+
+    movelift1()
+    changetext1()
+    changelooptext1()
+
+    var movelift2 = function () {
+    repeat2();
+    function repeat2() {
+    d3.selectAll(".liftblock2")
+    .transition()
+    .duration(31167)
+    .attr("y",yScaletower1(569))
+    .transition()
+    .delay(31167)
+    .duration(31167)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat2);
+    }
+    }
+
+    var changetext2 = function () {
+    var ct2 = d3.select(".loops2").text().split(' ')[0].replace(",","") * 1122 + 561;
+    var ct22 = d3.select(".loops2").text().split(' ')[0].replace(",","") * 1122 + 1122;
+    d3.selectAll(".txt2")
+    .transition()
+    .duration(31167)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct2),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(31167)
+    .duration(31167)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct22),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext2)}
+
+    var changelooptext2 = function () {
+    var bar2 = function() {
+    var foo2 = d3.select(".loops2").text().split(' ')[0] * 1;
+    d3.selectAll(".loops2")
+    .transition()
+    .delay(31167 * 2)
+    .text(function() {return (foo2 + 1) + ' round trips';})
+    .each("end",bar2)
+    };
+
+    var barfirst2 = function() {
+    var foofirst2 = d3.select(".loops2").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops2")
+    .transition()
+    .delay(31167 * 6 - 2000)
+    .text(function() {return (foofirst2 + 1) + ' round trips';})
+    .each("end",bar2)
+    };
+
+
+    d3.selectAll(".loops2")
+    .transition()
+    .delay(31167 * 2 - 2000)
+    .text("1 round trip")
+    .transition()
+    .delay(31167 * 4 - 2000)
+    .text("2 round trips")
+    barfirst2()
+
+    
+    }
+
+    movelift2()
+    changetext2()
+    changelooptext2()
+
+    var movelift3 = function () {
+    repeat3();
+    function repeat3() {
+    d3.selectAll(".liftblock3")
+    .transition()
+    .duration(58500)
+    .attr("y",yScaletower1(593))
+    .transition()
+    .delay(58500)
+    .duration(58500)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat3);
+    }
+    }
+
+    var changetext3 = function () {
+    var ct3 = d3.select(".loops3").text().split(' ')[0].replace(",","") * 1170 + 585;
+    var ct33 = d3.select(".loops3").text().split(' ')[0].replace(",","") * 1170 + 1170;
+    d3.selectAll(".txt3")
+    .transition()
+    .duration(58500)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct3),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(58500)
+    .duration(58500)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct33),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext3)}
+
+    var changelooptext3 = function () {
+    var bar3 = function() {
+    var foo3 = d3.select(".loops3").text().split(' ')[0] * 1;
+    d3.selectAll(".loops3")
+    .transition()
+    .delay(58500 * 2)
+    .text(function() {return (foo3 + 1) + ' round trips';})
+    .each("end",bar3)
+    };
+
+    var barfirst3 = function() {
+    var foofirst3 = d3.select(".loops3").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops3")
+    .transition()
+    .delay(58500 * 6 - 3000)
+    .text(function() {return (foofirst3 + 1) + ' round trips';})
+    .each("end",bar3)
+    };
+
+
+    d3.selectAll(".loops3")
+    .transition()
+    .delay(58500 * 2 - 3000)
+    .text("1 round trip")
+    .transition()
+    .delay(58500 * 4 - 3000)
+    .text("2 round trips")
+    barfirst3()
+
+    
+    }
+
+    movelift3()
+    changetext3()
+    changelooptext3()
+
+    var movelift4 = function () {
+    repeat4();
+    function repeat4() {
+    d3.selectAll(".liftblock4")
+    .transition()
+    .duration(38091)
+    .attr("y",yScaletower1(395))
+    .transition()
+    .delay(38091)
+    .duration(38091)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat4);
+    }
+    }
+
+    var changetext4 = function () {
+    var ct4 = d3.select(".loops4").text().split(' ')[0].replace(",","") * 774 + 387;
+    var ct44 = d3.select(".loops4").text().split(' ')[0].replace(",","") * 774 + 774;
+    d3.selectAll(".txt4")
+    .transition()
+    .duration(38091)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct4),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(38091)
+    .duration(38091)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct44),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext4)}
+
+    var changelooptext4 = function () {
+    var bar4 = function() {
+    var foo4 = d3.select(".loops4").text().split(' ')[0] * 1;
+    d3.selectAll(".loops4")
+    .transition()
+    .delay(38091 * 2)
+    .text(function() {return (foo4 + 1) + ' round trips';})
+    .each("end",bar4)
+    };
+
+    var barfirst4 = function() {
+    var foofirst4 = d3.select(".loops4").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops4")
+    .transition()
+    .delay(38091 * 6 - 2500)
+    .text(function() {return (foofirst4 + 1) + ' round trips';})
+    .each("end",bar4)
+    };
+
+
+    d3.selectAll(".loops4")
+    .transition()
+    .delay(38091 * 2 - 2500)
+    .text("1 round trip")
+    .transition()
+    .delay(38091 * 4 - 2500)
+    .text("2 round trips")
+    barfirst4()
+
+    
+    }
+
+    movelift4()
+    changetext4()
+    changelooptext4()
+
+    var movelift5 = function () {
+    repeat5();
+    function repeat5() {
+    d3.selectAll(".liftblock5")
+    .transition()
+    .duration(50988)
+    .attr("y",yScaletower1(421))
+    .transition()
+    .delay(50988)
+    .duration(50988)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat5);
+    }
+    }
+
+    var changetext5 = function () {
+    var ct5 = d3.select(".loops5").text().split(' ')[0].replace(",","") * 826 + 413;
+    var ct55 = d3.select(".loops5").text().split(' ')[0].replace(",","") * 826 + 826;
+    d3.selectAll(".txt5")
+    .transition()
+    .duration(50988)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct5),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(50988)
+    .duration(50988)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct55),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext5)}
+
+    var changelooptext5 = function () {
+    var bar5 = function() {
+    var foo5 = d3.select(".loops5").text().split(' ')[0] * 1;
+    d3.selectAll(".loops5")
+    .transition()
+    .delay(50988 * 2)
+    .text(function() {return (foo5 + 1) + ' round trips';})
+    .each("end",bar5)
+    };
+
+    var barfirst5 = function() {
+    var foofirst5 = d3.select(".loops5").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops5")
+    .transition()
+    .delay(50988 * 6 - 3000)
+    .text(function() {return (foofirst5 + 1) + ' round trips';})
+    .each("end",bar5)
+    };
+
+
+    d3.selectAll(".loops5")
+    .transition()
+    .delay(50988 * 2 - 3000)
+    .text("1 round trip")
+    .transition()
+    .delay(50988 * 4 - 3000)
+    .text("2 round trips")
+    barfirst5()
+
+    
+    }
+
+    movelift5()
+    changetext5()
+    changelooptext5()
+
+    var movelift6 = function () {
+    repeat6();
+    function repeat6() {
+    d3.selectAll(".liftblock6")
+    .transition()
+    .duration(26025)
+    .attr("y",yScaletower1(438))
+    .transition()
+    .delay(26025)
+    .duration(26025)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat6);
+    }
+    }
+
+    var changetext6 = function () {
+    var ct6 = d3.select(".loops6").text().split(' ')[0].replace(",","") * 876 + 438;
+    var ct66 = d3.select(".loops6").text().split(' ')[0].replace(",","") * 876 + 876;
+    d3.selectAll(".txt6")
+    .transition()
+    .duration(26025)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct6),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(26025)
+    .duration(26025)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct66),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext6)}
+
+    var changelooptext6 = function () {
+    var bar6 = function() {
+    var foo6 = d3.select(".loops6").text().split(' ')[0] * 1;
+    d3.selectAll(".loops6")
+    .transition()
+    .delay(26025 * 2)
+    .text(function() {return (foo6 + 1) + ' round trips';})
+    .each("end",bar6)
+    };
+
+    var barfirst6 = function() {
+    var foofirst6 = d3.select(".loops6").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops6")
+    .transition()
+    .delay(26025 * 6 - 2000)
+    .text(function() {return (foofirst6 + 1) + ' round trips';})
+    .each("end",bar6)
+    };
+
+
+    d3.selectAll(".loops6")
+    .transition()
+    .delay(26025 * 2 - 2000)
+    .text("1 round trip")
+    .transition()
+    .delay(26025 * 4 - 2000)
+    .text("2 round trips")
+    barfirst6()
+
+    
+    }
+
+    movelift6()
+    changetext6()
+    changelooptext6()
+
+    var movelift7 = function () {
+    repeat7();
+    function repeat7() {
+    d3.selectAll(".liftblock7")
+    .transition()
+    .duration(52535)
+    .attr("y",yScaletower1(381))
+    .transition()
+    .delay(52535)
+    .duration(52535)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat7);
+    }
+    }
+
+    var changetext7 = function () {
+    var ct7 = d3.select(".loops7").text().split(' ')[0].replace(",","") * 746 + 373;
+    var ct77 = d3.select(".loops7").text().split(' ')[0].replace(",","") * 746 + 746;
+    d3.selectAll(".txt7")
+    .transition()
+    .duration(52535)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct7),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(52535)
+    .duration(52535)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct77),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext7)}
+
+    var changelooptext7 = function () {
+    var bar7 = function() {
+    var foo7 = d3.select(".loops7").text().split(' ')[0] * 1;
+    d3.selectAll(".loops7")
+    .transition()
+    .delay(52535 * 2)
+    .text(function() {return (foo7 + 1) + ' round trips';})
+    .each("end",bar7)
+    };
+
+    var barfirst7 = function() {
+    var foofirst7 = d3.select(".loops7").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops7")
+    .transition()
+    .delay(52535 * 6 - 3000)
+    .text(function() {return (foofirst7 + 1) + ' round trips';})
+    .each("end",bar7)
+    };
+
+
+    d3.selectAll(".loops7")
+    .transition()
+    .delay(52535 * 2 - 3000)
+    .text("1 round trip")
+    .transition()
+    .delay(52535 * 4 - 3000)
+    .text("2 round trips")
+    barfirst7()
+
+    
+    }
+
+    movelift7()
+    changetext7()
+    changelooptext7()
+
+    var movelift8 = function () {
+    repeat8();
+    function repeat8() {
+    d3.selectAll(".liftblock8")
+    .transition()
+    .duration(56000)
+    .attr("y",yScaletower1(260))
+    .transition()
+    .delay(56000)
+    .duration(56000)
+    .attr("y",yScaletower1(8))
+    .each("end", repeat8);
+    }
+    }
+
+    var changetext8 = function () {
+    var ct8 = d3.select(".loops8").text().split(' ')[0].replace(",","") * 504 + 252;
+    var ct88 = d3.select(".loops8").text().split(' ')[0].replace(",","") * 504 + 504;
+    d3.selectAll(".txt8")
+    .transition()
+    .duration(56000)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct8),
+                prec = 1
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .transition()
+    .delay(56000)
+    .duration(56000)
+        .tween("text", function(d) {
+            var i = d3.interpolate(this.textContent.split(' ')[0].replace(",",""), ct88),
+                prec = 1,
+                round = (prec.length > 1) ? Math.pow(10, prec[1].length) : 1;
+
+            return function(t) {
+                this.textContent = myFormat(Math.round(i(t) * round) / round) + ' m';
+            };
+        })
+    .each("end",changetext8)}
+
+    var changelooptext8 = function () {
+    var bar8 = function() {
+    var foo8 = d3.select(".loops8").text().split(' ')[0] * 1;
+    d3.selectAll(".loops8")
+    .transition()
+    .delay(56000 * 2)
+    .text(function() {return (foo8 + 1) + ' round trips';})
+    .each("end",bar8)
+    };
+
+    var barfirst8 = function() {
+    var foofirst8 = d3.select(".loops8").text().split(' ')[0] * 1 + 2;
+    d3.selectAll(".loops8")
+    .transition()
+    .delay(56000 * 6 - 3000)
+    .text(function() {return (foofirst8 + 1) + ' round trips';})
+    .each("end",bar8)
+    };
+
+
+    d3.selectAll(".loops8")
+    .transition()
+    .delay(56000 * 2 - 3000)
+    .text("1 round trip")
+    .transition()
+    .delay(56000 * 4 - 3000)
+    .text("2 round trips")
+    barfirst8()
+
+    
+    }
+
+    movelift8()
+    changetext8()
+    changelooptext8()
+
+    }
+
+    svg.selectAll(".line1")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower1")
+          .attr("d", function(d) {return 'M60,' + yScaletower1(495) + ' L60,' + yScaletower1(0) + "z"})       
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock1")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock1 tower1'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","58")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".speed1")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text("20 metres/second")
+    .attr("class", "speed1")
+    .attr("x", 60)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(560))
+    .style("font-size","12px")
+
+    svg.selectAll(".txt1")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt1")
+    .attr("x", 60)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    //svg.selectAll(".metres1")
+    //.data(end_val)
+    //.enter()
+    //.append("text")
+    //.text("m")
+    //.attr("class", "metres1")
+    //.style("font-size","11px")
+    //.attr("x", 80)
+    //.attr("text-anchor","start")    .style("fill","#9e2f50")
+    //.attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops1")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops1")
+    .attr("x", 60)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+    //svg.selectAll(".txtloops1")
+    //.data(end_val)
+    //.enter()
+    //.append("text")
+    //.text("round trips")
+    //.attr("class", "txtloops1")
+    //.style("font-size","11px")
+    //.attr("x", 80)
+    //.attr("text-anchor","start")    .style("fill","#9e2f50")
+    //.attr("y",yScaletower1(-90))
+
+
+
+
+
+
+
+    svg.selectAll(".line2")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower2")
+          .attr("d", function(d) {return 'M180,' + yScaletower1(561) + ' L180,' + yScaletower1(0) + "z"})        
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock2")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock2 tower2'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","178")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt2")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt2")
+    .attr("x", 180)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    //svg.selectAll(".metres2")
+    //.data(end_val)
+    //.enter()
+    //.append("text")
+    //.text("m")
+    //.attr("class", "metres2")
+    //.style("font-size","11px")
+    //.attr("x", 183)
+    //.attr("text-anchor","start")    .style("fill","#9e2f50")
+    //.attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops2")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops2")
+    .attr("x", 180)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+    //svg.selectAll(".txtloops2")
+    //.data(end_val)
+    //.enter()
+    //.append("text")
+    //.text("round trips")
+    //.attr("class", "txtloops2")
+    //.style("font-size","11px")
+    //.attr("x", 183)
+    //.attr("text-anchor","start")    .style("fill","#9e2f50")
+    //.attr("y",yScaletower1(-90))
+
+
+
+
+
+
+    svg.selectAll(".line3")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower3")
+          .attr("d", function(d) {return 'M300,' + yScaletower1(585) + ' L300,' + yScaletower1(0) + "z"})      
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock3")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock3 tower3'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","298")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt3")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt3")
+    .attr("x", 300)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops3")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops3")
+    .attr("x", 300)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+
+
+
+
+svg.selectAll(".line4")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower4")
+          .attr("d", function(d) {return 'M420,' + yScaletower1(387) + ' L420,' + yScaletower1(0) + "z"})      
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock4")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock4 tower4'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","418")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt4")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt4")
+    .attr("x", 420)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops4")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops4")
+    .attr("x", 420)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+
+
+
+
+svg.selectAll(".line5")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower5")
+          .attr("d", function(d) {return 'M540,' + yScaletower1(413) + ' L540,' + yScaletower1(0) + "z"})      
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock5")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock5 tower5'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","538")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt5")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt5")
+    .attr("x", 540)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops5")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops5")
+    .attr("x", 540)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+
+
+
+
+
+    svg.selectAll(".line6")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower6")
+          .attr("d", function(d) {return 'M660,' + yScaletower1(438) + ' L660,' + yScaletower1(0) + "z"})        
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock6")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock6 tower6'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","658")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt6")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt6")
+    .attr("x", 660)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops6")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops6")
+    .attr("x", 660)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+
+
+
+
+
+    svg.selectAll(".line7")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower7")
+          .attr("d", function(d) {return 'M780,' + yScaletower1(373) + ' L780,' + yScaletower1(0) + "z"})         
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock7")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock7 tower7'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","778")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt7")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt7")
+    .attr("x", 780)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops7")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops7")
+    .attr("x", 780)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+
+
+
+
+
+    svg.selectAll(".line8")
+          .data(circle1)
+          .enter()
+          .append("path")
+          .attr("class","path tower8")
+          .attr("d", function(d) {return 'M900,' + yScaletower1(252) + ' L900,' + yScaletower1(0) + "z"})        
+          .style("stroke-width","2px")
+          .style("fill","none")
+          .style("stroke","#bb6d82");
+
+    svg.selectAll(".liftblock8")
+          .data(circle1)
+          .enter()
+          .append("rect")
+          .attr("class", function(d,i){return 'liftblock8 tower8'})
+          .attr("width","4px")
+          .attr("height","8px")
+          .attr("x","898")
+          .attr("y",yScaletower1(8))
+          .style("fill","#9e2f50")
+          .style("fill-opacity","1")
+          .style("stroke","#9e2f50");
+
+    svg.selectAll(".txt8")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val)
+    .attr("class", "txt8")
+    .attr("x", 900)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-55))
+
+    svg.selectAll(".loops8")
+    .data(end_val)
+    .enter()
+    .append("text")
+    .text(start_val + ' round trips')
+    .attr("class", "loops8")
+    .attr("x", 900)
+    .attr("text-anchor","middle")    .style("fill","#9e2f50")
+    .attr("y",yScaletower1(-90))
+
+    var towernames = ["CTF Finance Centre","Shanghai Tower","Burj Khalifa","One World Trade Center","Willis Tower","Taipei 101","Empire State Building","Chrysler Building"];
+
+    var locations = ["Guangzhou","Shanghai","Dubai","New York City","Chicago","Taipei","New York City","New York City"];
+
+    var years = [2016,2015,2010,2014,1974,2004,1931,1930];
+
+    var speeds = [18,10,10.2,8.1,16.8,7.1,4.5];
+
+    var heights = [655,835,562,556,525,430,330];
+
+    svg.selectAll(".towername")
+    .data(towernames)
+    .enter()
+    .append("text")
+    .text(function(d,i) {return towernames[i];})
+    .attr("class", function(d,i) {return "towername " + d[i];})
+    .style("font-size","12px")
+    .attr("x", function(d,i) {return i*120 + 60;})
+    .attr("text-anchor","middle")
+    .attr("y",yScaletower1(-130))
+
+    svg.selectAll(".city")
+    .data(locations)
+    .enter()
+    .append("text")
+    .text(function(d,i) {return locations[i];})
+    .attr("class", function(d,i) {return "city " + d[i];})
+    .style("font-size","12px")
+    .attr("x", function(d,i) {return i*120 + 60;})
+    .attr("text-anchor","middle")
+    .attr("y",yScaletower1(-160))
+
+    svg.selectAll(".year")
+    .data(years)
+    .enter()
+    .append("text")
+    .text(function(d,i) {return years[i];})
+    .attr("class", function(d,i) {return "year " + d[i];})
+    .style("font-size","12px")
+    .attr("x", function(d,i) {return i*120 + 60;})
+    .attr("text-anchor","middle")
+    .attr("y",yScaletower1(-190))
+
+
+    svg.selectAll(".liftspeeds")
+    .data(speeds)
+    .enter()
+    .append("text")
+    .text(function(d,i) {return speeds[i] + ' m/s';})
+    .attr("class", function(d,i) {return "speed " + d[i] + 2;})
+    .style("font-size","12px")
+    .style("fill","#9e2f50")
+    .attr("x", function(d,i) {return ((i + 1) * 120) + 60;})
+    .attr("text-anchor","middle")
+    .attr("y",function(d,i) {return yScaletower1(heights[i]);})
+
+    d3.select("#restart").on('click',function() {
+
+    svg.selectAll(".liftblock1").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt1").transition().text(start_val)   
+    svg.selectAll(".loops1").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock2").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt2").transition().text(start_val)   
+    svg.selectAll(".loops2").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock3").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt3").transition().text(start_val)   
+    svg.selectAll(".loops3").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock4").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt4").transition().text(start_val)   
+    svg.selectAll(".loops4").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock5").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt5").transition().text(start_val)   
+    svg.selectAll(".loops5").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock6").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt6").transition().text(start_val)   
+    svg.selectAll(".loops6").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock7").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt7").transition().text(start_val)   
+    svg.selectAll(".loops7").transition().text(start_val + ' round trips')
+
+    svg.selectAll(".liftblock8").transition().attr("y",yScaletower1(8))
+    svg.selectAll(".txt8").transition().text(start_val)   
+    svg.selectAll(".loops8").transition().text(start_val + ' round trips').each("end",animate)
+
+    });
+
+    animate()
+
+
+
+    </script>
+  </body>
+</html>

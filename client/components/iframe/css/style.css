@@ -1,23 +1,6 @@
-@import 'o-colors/main';
-@import 'components/core/main';
+#ig-include @font-face{ font-family:"BentonSans"; src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-3.woff") format("woff"); font-style: normal; font-weight: normal;}
 
-/*
-      TODO: delete this comment
-
-      Write your code here - keep it neat!
-      Split logical parts of you project into components e.g.
-
-      /client
-        - /components
-            - /component-name
-                - styles.scss
-                - index.js
-                - template.html
-*/
-
-#ig-include {margin-top: 0;
-margin-bottom:80px;
-text-align:left;}
+#ig-include @font-face{ font-family:"BentonSans"; src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-3.woff") format("woff"); font-style: normal; font-weight: bold; }
 
 #ig-include text{font-family:"BentonSans",sans-serif;cursor:default;font-size:14px;}
 
@@ -25,9 +8,9 @@ text-align:left;}
 
 #ig-include .clearbutton{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
 
-#ig-include #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal; text-align:left;}
+#ig-include #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal;}
 
-#ig-include div#credits{position:absolute;top:780px;left:0px; text-align:left;}
+#ig-include div#credits{position:absolute;top:780px;left:0px;}
 
 #ig-include #credits span{font-size:11px;font-weight:bold;}
 
@@ -53,10 +36,4 @@ text-align:left;}
 
 #ig-include #yaxisintro.axis path{opacity:0;}
 
-#ig-include #credits p {font-family: BentonSans,Arial,Helvetica,sans-serif; font-size: 10px; color: #74736c; clear: both; margin-bottom: 8px; margin-top: 20px; margin-left:10px; margin-right:10px;}
-
-#ig-include span#caption {}
-
-#ig-include #captiondiv {text-align:left; padding:10px;}
-
-#ig-include #captionouter {padding: 0px; margin: 10px 0px; background-color: rgb(246, 233, 216);}
+#ig-include #credits p {font-family: BentonSans,Arial,Helvetica,sans-serif; font-size: 10px; color: #74736c; clear: both; margin-bottom: 8px; margin-top: 10px;}

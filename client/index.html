@@ -2,21 +2,12 @@
 
 {% block article_body %}
 
-<!-- start iframe topper -->
-
-
-<div data-o-grid-colspan="full-width Lhide XLhide" style="background:#00747A; min-height:60px; padding: 20px;">
-	Sorry, the interactive graphic contained in this page is too large to display correctly on your device.	You may be able to view this content by <a href="http://ft.com/ig/features/2014-11-04_elevators/lifts_test.html">opening it in a new window</a>.
-</div>
-<div data-o-grid-colspan="hide Lfull-width XLfull-width" style="text-align:center;">			
-	<iframe allowtransparency="true" frameborder="0" height="820" scrolling="no" src="http://ft.com/ig/features/2014-11-04_elevators/lifts_test.html" width="972"></iframe>	
+<div data-o-grid-colspan="full-width center Lhide XLhide" style="background:#F2DFCE; min-height:60px; padding: 20px;"><p class="error-message" style="max-width:600px; margin: 0 auto; text-align: center; font-style: italic;">Sorry, this interactive graphic was first published in 2014 and was not designed to display correctly on your device. You may be able to view it on a device with a larger screen, such as a tablet, laptop or desktop computer. Alternatively, you can view the <a href="http://ig-legacy.ft.com/content/1392ab72-64e2-11e4-ab2d-00144feabdc0">archived version of this article</a>.</p>
 </div>
 
-
-<!-- L=980 and up -->
-
-
-<!-- end iframe topper -->
+<div data-o-grid-colspan="hide Lfull-width XLfull-width" style="text-align:center;" id="ig-include">			
+	<div style="width:972px; position: relative; margin: 0 auto;">{% include "components/iframe/include.html"  %}</div>
+</div>
 
 {% markdown %}
 
@@ -24,22 +15,9 @@ The race to build ever [taller skyscrapers](http://www.ft.com/cms/s/0/52063bcc-b
 
 To keep pace with the bigger buildings, lift makers including Mitsubishi, Hitachi and Toshiba have been forced to make technological strides, using new motors and high-tech air pressure systems that allow them to transport people higher and faster than ever before.
 
-<!-- start iframe mid -->
-
-
-<div data-o-grid-colspan="full-width Mhide Lhide XLhide" style="background:#00747A; min-height:60px; padding: 20px;">
-	Sorry, the interactive graphic contained in this page is too large to display correctly on your device.		You may be able to view this content by <a href="http://interactive.ftdata.co.uk/features/2012-11-15_TaxEvasion/index.html">opening it in a new window</a>.
-</div>
-<div data-o-grid-colspan="hide Mfull-width Lfull-width XLfull-width" style="text-align:center;">			
-	<iframe allowtransparency="true" frameborder="0" height="662" scrolling="no" src="http://interactive.ftdata.co.uk/features/2012-11-15_TaxEvasion/index.html" width="568"></iframe>
-</div>
-
-
-<!-- end iframe mid -->
-
 For the past decade, <a class="wsodCompany" data-hover-chart="jp:6502" href="http://markets.ft.com/tearsheets/performance.asp?s=jp:6502">Toshiba</a>’s lifts in the <a href="http://www.ft.com/cms/s/0/29b662c4-5d89-11d9-ac01-00000e2511c8.html?siteedition=uk" title="World's tallest skyscraper opens in Taipei - FT.com">Taipei 101</a> office tower in Taiwan has held the title of the world’s fastest elevator, with speeds of 16.8 metres per second. However, in the next two years this speed record is set to be beaten twice.
 
-<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2F61b2f404-64e4-11e4-ab2d-00144feabdc0.img?source=ig" style="float:right;" />
+<!--<img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fim.ft-static.com%2Fcontent%2Fimages%2F61b2f404-64e4-11e4-ab2d-00144feabdc0.img?source=ig" style="float:right;" />-->
 
 Rival Japanese lift maker Mitsubishi is poised to steal its crown in 2015, with lifts in China’s 121-storey <a href="http://www.ft.com/cms/s/2/2b681036-4d17-11e3-bf32-00144feabdc0.html" title="Is China’s Shanghai Tower the world’s greenest super skyscraper? - FT.com">Shanghai Tower</a> that travel at 18 metres per second. A year later, Hitachi is aiming to set a record with lifts in the Guangzhou CTF Finance Centre that climb at a rate of 20 metres per second – or 4,000ft per minute – the equivalent of travelling from the first floor to the 95th in 43 seconds.
 
@@ -91,19 +69,8 @@ Jim Fortune of Fortune Shepler Saling, which has designed the elevator systems i
 
 “The anti gravity block will have to wait a long time and was first identified in science fiction writings by Jules Verne . . . and in the science fiction movie _Back to the Future”._
 
-<!-- start swf footer -->
-
-
-<div data-o-grid-colspan="full-width Mhide Lhide XLhide" style="background:#00747A; min-height:60px; padding: 20px;">
-	Sorry, the interactive graphic contained in this page is too large to display correctly on your device. You may be able to view this content by <a href="http://media.ft.com/cms/af932864-ce13-11de-a1ea-00144feabdc0.swf">opening it in a new window</a>.	
-</div>
-<div data-o-grid-colspan="hide Mfull-width Lfull-width XLfull-width" style="text-align:center;">			
-	<object type="application/x-shockwave-flash" width="825" height="610" bgcolor="#ffffff" data="http://media.ft.com/cms/af932864-ce13-11de-a1ea-00144feabdc0.swf" id="flashlink0"><param name="wmode" value="opaque"></object>
-</div>
-
-
-<!-- end swf footer -->
-
+_This page was updated to on July 7, 2017. Additional development by Martin Stabe._
 
 {% endmarkdown %}
+
 {% endblock %}
