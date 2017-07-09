@@ -1,39 +1,39 @@
-@font-face{
-	font-family:"BentonSans";
-	src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-3.woff") format("woff");
-	font-style: normal;
-	font-weight: normal;
-}
+#ig-include @font-face{ font-family:"BentonSans"; src: url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/e9d47971-b7d8-4663-8c9b-3a0b425e981f-3.woff") format("woff"); font-style: normal; font-weight: normal;}
 
-@font-face{
-	font-family:"BentonSans";
-	src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-3.woff") format("woff");
-	font-style: normal;
-	font-weight: bold;
-}
+#ig-include @font-face{ font-family:"BentonSans"; src: url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-2.eot?#iefix") format("embedded-opentype"), url("http://s1.ft-static.com/m/font/76e393a7-edbd-4283-91db-93b1a40fe465-3.woff") format("woff"); font-style: normal; font-weight: bold; }
 
-text{font-family:"BentonSans",sans-serif;cursor:default;font-size:14px;}
-    a{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
-    .clearbutton{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
-    #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal;}
-    div#credits{position:absolute;top:780px;left:0px;}
-    #credits span{font-size:11px;font-weight:bold;}
-    #credits span#author{position:relative;left:16px;}
-    #credits span#maps{position:relative;left:8px;}
-    span{color:#74736c;font-family:"BentonSans",sans-serif;cursor:default;}
-    a:hover{background-color:#74736c;color:white;}
-    #credits a:hover{background-color:none;color:#000;}
-    #credits a.ftr:hover{background-color:none;color:#74736c;}
-    #credits a.ftr{color:#74736c;}
-    #credits a.thin{font-weight:normal;color:#74736c;}
-    .axis path,
-    .axis line{fill:none;stroke:#a7a59b;shape-rendering:crispEdges;}
-    .axis text{font-family:"BentonSans"sans-serif;font-size: 12px;fill:#74736c;}
-    #yaxisintro.axis path{opacity:0;}
-    #credits p {
-    font-family: BentonSans,Arial,Helvetica,sans-serif;
-    font-size: 10px;
-    color: #74736c;
-    clear: both;
-    margin-bottom: 8px;
-    margin-top: 2px;
+#ig-include text{font-family:"BentonSans",sans-serif;cursor:default;font-size:14px;}
+
+#ig-include a{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+
+#ig-include .clearbutton{color:#74736c;margin-right:0px;text-decoration:none;background-color:#fff1e0;padding:4px 8px;border-radius:3px;font-family:"BentonSans",sans-serif;height:20px;line-height:19px;transition: background-color 0.3s, color 0.3s;}
+
+#ig-include #credits a{color:#2e6e9e;position:relative;margin-right:0px;text-decoration:none;none;background-color:#fff1e0;padding:0px;border-radius:0px;font-size:11px;font-weight:normal;}
+
+#ig-include div#credits{position:absolute;top:780px;left:0px;}
+
+#ig-include #credits span{font-size:11px;font-weight:bold;}
+
+#ig-include #credits span#author{position:relative;left:16px;}
+
+#ig-include #credits span#maps{position:relative;left:8px;}
+
+#ig-include span{color:#74736c;font-family:"BentonSans",sans-serif;cursor:default;}
+
+#ig-include a:hover{background-color:#74736c;color:white;}
+
+#ig-include #credits a:hover{background-color:none;color:#000;}
+
+#ig-include #credits a.ftr:hover{background-color:none;color:#74736c;}
+
+#ig-include #credits a.ftr{color:#74736c;}
+
+#ig-include #credits a.thin{font-weight:normal;color:#74736c;}
+
+#ig-include .axis path, .axis line{fill:none;stroke:#a7a59b;shape-rendering:crispEdges;}
+
+#ig-include .axis text{font-family:"BentonSans"sans-serif;font-size: 12px;fill:#74736c;}
+
+#ig-include #yaxisintro.axis path{opacity:0;}
+
+#ig-include #credits p {font-family: BentonSans,Arial,Helvetica,sans-serif; font-size: 10px; color: #74736c; clear: both; margin-bottom: 8px; margin-top: 10px;}
