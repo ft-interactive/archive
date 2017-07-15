@@ -1,7 +1,7 @@
 export default () => ({ // eslint-disable-line
 
   // link file UUID
-  id: '1392ab72-64e2-11e4-ab2d-00144feabdc0',
+  id: '927ca86e-d29b-11e2-88ed-00144feab7de',
 
   // canonical URL of the published page
   // https://ig.ft.com/archive get filled in by the ./configure script
@@ -9,16 +9,16 @@ export default () => ({ // eslint-disable-line
 
   // To set an exact publish date do this:
   //       new Date('2016-05-17T17:11:22Z')
-  publishedDate: new Date('2014-11-06T11:21:00Z'),
+  publishedDate: new Date('2013-06-12T20:11:00Z'),
 
-  headline: 'World’s fastest lifts race to the top of the tallest buildings',
+  headline: 'How much is your personal data worth?',
 
   // summary === standfirst (Summary is what the content API calls it)
-  summary: '',
+  summary: 'Use our calculator to check how much multibillion-dollar data broker industry might pay for your personal data',
 
   topic: {
-    name: 'Industrials',
-    url: 'https://www.ft.com/companies/industrials',
+    name: 'Media',
+    url: 'https://www.ft.com/companies/media',
   },
 
   relatedArticle: {
@@ -37,16 +37,17 @@ export default () => ({ // eslint-disable-line
   // Byline can by a plain string, markdown, or array of authors
   // if array of authors, url is optional
   byline: [
-    { name: 'Tanya Powley', url: 'https://www.ft.com/stream/authorsId/Q0ItMDAwMDg0MA==-QXV0aG9ycw==' },
-    { name: 'John Burn-Murdoch', url: 'https://www.ft.com/john-burn-murdoch' },
-    { name: 'Cleve Jones', url: 'https://www.ft.com/stream/authorsId/Q0ItQ0o2Nzg5MA==-QXV0aG9ycw==' },
+    { name: 'Emily Steel', url: 'https://www.ft.com/stream/cf8610aa-424a-3dac-94b1-71778d038f70' },
+    { name: 'Callum Locke', url: 'https://www.ft.com/callum-locke' },
+    { name: 'Emily Cadman', url: 'https://www.ft.com/stream/fd6734a1-3ae2-30f3-98a1-e373f8da8bf1' },
+    { name: 'Ben Freese', url: 'https://www.ft.com/stream/e5164c9c-ab66-3e1e-bc69-da3767b77c98' },
   ],
 
   // Appears in the HTML <title>
-  title: 'World’s fastest lifts race to the top of the tallest buildings',
+  title: 'How much is your personal data worth?',
 
   // meta data
-  description: '',
+  description: 'While the multibillion-dollar data broker industry profits from the trade of thousands of details about individuals, those bits of information are often sold for a fraction of a penny apiece, according to industry pricing data viewed by the Financial Times',
 
   /*
   TODO: Select Twitter card type -
