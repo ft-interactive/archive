@@ -41,6 +41,7 @@ export default () => ({ // eslint-disable-line
   byline: [
     { name: 'Katie Carnie', url: 'https://www.ft.com/search?q=Katie+Carnie' },
     { name: 'Ben Freese', url: 'https://www.ft.com/search?q=Ben+Freese' },
+    { name: 'Simeon Kerr', url: 'https://www.ft.com/stream/eeb1234d-db83-3821-80c9-935181753e0b' },
   ],
 
   // Appears in the HTML <title>
