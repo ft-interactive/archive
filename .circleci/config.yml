@@ -6,6 +6,9 @@ jobs:
       - image: node:8
     steps:
       - checkout
+      - run:
+          name: npm i
+          command: npm install
       - deploy:
           name: Deploy
           command: |
