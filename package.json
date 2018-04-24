@@ -1,0 +1,23 @@
+{
+  "name": "archive",
+  "version": "1.0.0",
+  "description": "> Demo on how to refactor old non-responsive projects, including:",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "ft-graphics-deploy --assets-prefix=https://ig.ft.com/v2/__assets/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ft-interactive/archive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ft-interactive/archive/issues"
+  },
+  "homepage": "https://github.com/ft-interactive/archive#readme",
+  "dependencies": {
+    "ft-graphics-deploy": "^2.2.2"
+  }
+}
