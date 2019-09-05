@@ -53,5 +53,4 @@ sed -Ei '' 's/http:\/\/elections.ft.com\/uk\/2015\///g' dist/*/*.html
 sed -Ei '' 's/elections.ft.com/ft.com/g' dist/*/*.html
 sed -Ei '' 's/projections.html#/#/g' dist/projections/index.html
 sed -Ei '' 's/http:\/\/interactivegraphics\.ft-static\.com\/data\/geo\/uk/\.\.\/js/g' dist/js/group-forecast-slopes-8aadaf0b.js
-
-tree dist
+sed -Ei '' 's/http:\/\/build.origami/https:\/\/build.origami/g' dist/*/*
