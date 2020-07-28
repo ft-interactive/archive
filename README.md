@@ -9,10 +9,20 @@
 
 ## Usage:
 
-This branch only contains a "dist" folder, which is version controlled.
+This branch only contains a "dist" folder, which is version controlled. Place any files you want to deploy into this `dist` folder.
 
 The idea is if a project doesn't require any re-writing, you can just populate dist/
 and be well on your way to getting it deployed in a sustainable fashion.
+
+## How to flatten a page:
+
+Some people will use [httrack](https://www.httrack.com/).
+
+You can also use `wget` (see below as an example for curling https://ig.ft.com/tech-race-to-a-trillion/). You can get `wget` using [Homebrew](https://brew.sh/).
+
+```
+wget --no-cache --recursive --page-requisites --adjust-extension --span-hosts --convert-links --domains ig.ft.com --no-parent https://ig.ft.com/tech-race-to-a-trillion/
+```
 
 ## Licence
 This software is published by the Financial Times under the [MIT licence](http://opensource.org/licenses/MIT).
